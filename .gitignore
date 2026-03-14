@@ -1,0 +1,33 @@
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[oc]
+*.egg-info/
+build/
+dist/
+wheels/
+.venv/
+.env
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# OS
+Thumbs.db
+
+requisitos.txt
+descricao.txt

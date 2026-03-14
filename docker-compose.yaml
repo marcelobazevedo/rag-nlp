@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: postgres_pgvector_rag
+    restart: no
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: senha_forte_123
+      POSTGRES_DB: rag_db
+    ports:
+      - "127.0.0.1:5432:5432"   # SOMENTE localhost
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # scripts .sql/.sh aqui será executado na 1ª inicialização do volume
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  postgres_data:

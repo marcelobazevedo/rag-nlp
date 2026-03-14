@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "question": "Quais sao os principios gerais previstos na Lei 14.133?",
+      "relevant": [
+        "lei_14_133_2021#chunk_000",
+        "lei_14_133_2021#chunk_001"
+      ]
+    },
+    {
+      "question": "Qual e a conclusao principal do Parecer 10/2025?",
+      "relevant": [
+        {
+          "doc_id": "parecer_10_2025",
+          "chunk_id": "chunk_000"
+        }
+      ]
+    }
+  ]
+}

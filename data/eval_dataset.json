@@ -1,0 +1,117 @@
+{
+  "items": [
+    {
+      "question": "Quais são os princípios gerais aplicáveis às licitações e contratos previstos na Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_005"
+      ]
+    },
+    {
+      "question": "Quais as modalidades de licitação existentes segundo a Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_087",
+        "lei_14_133_2021::chunk_026",
+        "lei_14_133_2021::chunk_027"
+      ]
+    },
+    {
+      "question": "Em quais hipóteses é dispensável a licitação conforme o artigo 75 da Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_171"
+      ]
+    },
+    {
+      "question": "Quais são os casos de inexigibilidade de licitação previstos na Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_166",
+        "lei_14_133_2021::chunk_164"
+      ]
+    },
+    {
+      "question": "Quais documentos são obrigatórios no processo de contratação direta segundo a Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_164",
+        "lei_14_133_2021::chunk_165"
+      ]
+    },
+    {
+      "question": "O que a Lei 14.133/2021 estabelece sobre nulidade de licitação e seus efeitos jurídicos?",
+      "relevant": [
+        "lei_14_133_2021::chunk_302",
+        "lei_14_133_2021::chunk_163",
+        "lei_14_133_2021::chunk_304"
+      ]
+    },
+    {
+      "question": "Quais sanções administrativas podem ser aplicadas a responsáveis por infrações na Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_307",
+        "lei_14_133_2021::chunk_309",
+        "lei_14_133_2021::chunk_310",
+        "lei_14_133_2021::chunk_311"
+      ]
+    },
+    {
+      "question": "Qual o prazo máximo de vigência de contratos de serviços contínuos na Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_256",
+        "lei_14_133_2021::chunk_258"
+      ]
+    },
+    {
+      "question": "Como é realizada a fiscalização da execução contratual segundo a Lei 14.133/2021?",
+      "relevant": [
+        "lei_14_133_2021::chunk_265",
+        "lei_14_133_2021::chunk_266"
+      ]
+    },
+    {
+      "question": "Qual é o conteúdo e as conclusões do Parecer 8/2024 da AGU?",
+      "relevant": [
+        "parecer_8_2024::chunk_000",
+        "parecer_8_2024::chunk_001",
+        "parecer_8_2024::chunk_002"
+      ]
+    },
+    {
+      "question": "O que o Parecer 10/2025 estabelece sobre a designação de gestores e fiscais de contratos?",
+      "relevant": [
+        "parecer_10_2025::chunk_001",
+        "parecer_10_2025::chunk_002",
+        "parecer_10_2025::chunk_003"
+      ]
+    },
+    {
+      "question": "O que o Parecer 8/2025 trata sobre pagamento antecipado em contratos administrativos?",
+      "relevant": [
+        "parecer_8_2025::chunk_000",
+        "parecer_8_2025::chunk_001",
+        "parecer_8_2025::chunk_002"
+      ]
+    },
+    {
+      "question": "O que o Parecer 1/2023 estabelece sobre inexigibilidade de licitação para serviços técnicos especializados?",
+      "relevant": [
+        "parecer_1_2023::chunk_000",
+        "parecer_1_2023::chunk_001",
+        "parecer_1_2023::chunk_002"
+      ]
+    },
+    {
+      "question": "Qual é o assunto discutido na Nota Jurídica 1/2024 e qual a conclusão sobre adesão à ata de registro de preços?",
+      "relevant": [
+        "nota_juridica_1_2024::chunk_000",
+        "nota_juridica_1_2024::chunk_002",
+        "nota_juridica_1_2024::chunk_009"
+      ]
+    },
+    {
+      "question": "O que a Nota Jurídica 3/2024 debate sobre registro de preços em contratação direta?",
+      "relevant": [
+        "nota_juridica_3_2024::chunk_000",
+        "nota_juridica_3_2024::chunk_001",
+        "nota_juridica_3_2024::chunk_002"
+      ]
+    }
+  ]
+}
