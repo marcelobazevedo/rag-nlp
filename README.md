@@ -2,6 +2,7 @@
 
 Aplicação RAG em Streamlit para consulta jurídica sobre a Lei 14.133/2021, pareceres e notas jurídicas. O projeto cobre ingestão de PDFs, chunking, indexação em PostgreSQL com pgvector, recuperação `dense`/`sparse`/`hybrid`, execução do chatbot e avaliação com `Recall@k` e rubrica qualitativa.
 
+
 ## Trilha implementada
 
 Trilha implementada no projeto:
@@ -148,6 +149,12 @@ Para limpar a tabela antes de reingerir:
 uv run python -m rag.ingest.truncate_data
 ```
 
+Para fazer um reset mais completo do projeto, truncando a tabela, removendo artefatos regeneráveis de avaliação e limpando caches locais:
+
+```bash
+uv run python -m rag.ingest.reset_project_state
+```
+
 ### Execução do chatbot
 
 Com o banco populado:
@@ -230,6 +237,13 @@ Ele foi estruturado com:
 - `expected_behavior: "refuse"` para perguntas fora do escopo do corpus
 
 Esse formato foi adotado para avaliar retrieval com `Recall@k`. A qualidade da resposta final é analisada separadamente na rubrica qualitativa.
+
+## Limitações atuais
+
+- o fluxo principal de execução foi preparado para ambiente local/Docker, não para notebook de Colab
+- a política de recusa por evidência insuficiente está descrita no prompt, mas não há um guard obrigatório integrado ao pipeline final
+- o corpus está versionado no repositório, mas não há script separado para download das fontes
+- a avaliação qualitativa gera os arquivos-base, mas o preenchimento da rubrica continua sendo manual
 
 ## Glossário rápido
 

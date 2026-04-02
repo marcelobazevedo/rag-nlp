@@ -89,7 +89,6 @@ def evaluate(dataset_path: Path):
     print("\nRecall@k médio por modo")
     print(f"Itens avaliados para recall: {answerable_items}")
     print(f"Itens marcados para recusa e excluidos do recall: {refuse_items}")
-    print("Avaliacao mede os modos de retrieval sem query expansion e com named_doc desativado para manter comparacao experimental entre dense/sparse/hybrid.")
     print("mode\tk=3\tk=5\tk=10")
     for mode in modes:
         values = [mean(metrics[mode][k]) if metrics[mode][k] else 0.0 for k in ks]

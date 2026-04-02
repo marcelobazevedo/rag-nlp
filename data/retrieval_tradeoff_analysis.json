@@ -3,9 +3,8 @@
   "answerable_items": 18,
   "refuse_items_excluded": 2,
   "evaluation_policy": {
-    "use_query_expansion": true,
-    "use_named_doc": false,
-    "reason": "comparar dense/sparse/hybrid com a logica principal do pipeline sem deixar o atalho named_doc mascarar os resultados"
+    "use_query_expansion": false,
+    "use_named_doc": false
   },
   "ks": [
     3,
@@ -19,46 +18,46 @@
   ],
   "average_recall": {
     "dense": {
-      "3": 0.14814814814814814,
-      "5": 0.2037037037037037,
-      "10": 0.19444444444444445
+      "3": 0.12962962962962962,
+      "5": 0.14814814814814814,
+      "10": 0.22407407407407406
     },
     "sparse": {
-      "3": 0.08333333333333333,
-      "5": 0.13148148148148148,
-      "10": 0.27685185185185185
+      "3": 0.07592592592592592,
+      "5": 0.15648148148148147,
+      "10": 0.26296296296296295
     },
     "hybrid": {
-      "3": 0.20833333333333331,
-      "5": 0.2638888888888889,
-      "10": 0.3287037037037037
+      "3": 0.2175925925925926,
+      "5": 0.2685185185185185,
+      "10": 0.4574074074074074
     }
   },
   "wins": {
     "hybrid_vs_dense": {
-      "3": 6,
-      "5": 5,
-      "10": 7
+      "3": 5,
+      "5": 6,
+      "10": 11
     },
     "hybrid_vs_sparse": {
-      "3": 6,
+      "3": 8,
       "5": 8,
-      "10": 6
+      "10": 9
     },
     "dense_vs_hybrid": {
-      "3": 3,
-      "5": 1,
+      "3": 0,
+      "5": 0,
       "10": 1
     },
     "sparse_vs_hybrid": {
-      "3": 3,
+      "3": 4,
       "5": 5,
-      "10": 5
+      "10": 4
     },
     "all_equal": {
       "3": 6,
-      "5": 3,
-      "10": 4
+      "5": 5,
+      "10": 2
     }
   },
   "per_question": [
@@ -75,9 +74,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_268",
-              "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_294"
+              "lei_14_133_2021::chunk_273"
             ]
           },
           "5": {
@@ -88,8 +87,8 @@
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_285",
-              "lei_14_133_2021::chunk_294"
+              "lei_14_133_2021::chunk_345",
+              "lei_14_133_2021::chunk_366"
             ]
           },
           "10": {
@@ -98,13 +97,13 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_048",
-              "lei_14_133_2021::chunk_199",
               "lei_14_133_2021::chunk_236",
+              "lei_14_133_2021::chunk_254",
+              "lei_14_133_2021::chunk_259",
               "lei_14_133_2021::chunk_268",
+              "lei_14_133_2021::chunk_271",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_294",
-              "lei_14_133_2021::chunk_341",
+              "lei_14_133_2021::chunk_278",
               "lei_14_133_2021::chunk_345",
               "lei_14_133_2021::chunk_366"
             ]
@@ -116,9 +115,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "parecer_13_2025::chunk_014",
               "parecer_18_2024::chunk_002",
-              "parecer_18_2024::chunk_034"
+              "parecer_18_2024::chunk_034",
+              "parecer_1_2023::chunk_027"
             ]
           },
           "5": {
@@ -126,11 +125,11 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_365",
               "parecer_18_2024::chunk_002",
               "parecer_18_2024::chunk_034",
-              "parecer_18_2024::chunk_035",
-              "parecer_1_2023::chunk_027"
+              "parecer_1_2023::chunk_027",
+              "parecer_1_2023::chunk_060",
+              "parecer_9_2023::chunk_019"
             ]
           },
           "10": {
@@ -138,13 +137,13 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_365",
-              "parecer_10_2025::chunk_008",
+              "parecer_12_2024::chunk_025",
               "parecer_13_2025::chunk_014",
               "parecer_15_2025::chunk_003",
+              "parecer_17_2024::chunk_045",
+              "parecer_17_2024::chunk_062",
               "parecer_18_2024::chunk_002",
               "parecer_18_2024::chunk_034",
-              "parecer_18_2024::chunk_035",
               "parecer_1_2023::chunk_027",
               "parecer_1_2023::chunk_060",
               "parecer_9_2023::chunk_019"
@@ -157,8 +156,8 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_365",
               "parecer_18_2024::chunk_002"
             ]
           },
@@ -167,11 +166,11 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_358",
-              "parecer_10_2025::chunk_009",
-              "parecer_18_2024::chunk_002"
+              "parecer_18_2024::chunk_002",
+              "parecer_18_2024::chunk_034"
             ]
           },
           "10": {
@@ -182,13 +181,13 @@
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_354",
-              "lei_14_133_2021::chunk_358",
+              "lei_14_133_2021::chunk_345",
+              "lei_14_133_2021::chunk_366",
               "parecer_14_2024::chunk_027",
               "parecer_18_2024::chunk_002",
               "parecer_18_2024::chunk_034",
-              "parecer_21_2023::chunk_001",
-              "parecer_24_2023::chunk_001"
+              "parecer_1_2023::chunk_027",
+              "parecer_9_2023::chunk_019"
             ]
           }
         }
@@ -205,31 +204,29 @@
       "results": {
         "dense": {
           "3": {
-            "recall": 0.6666666666666666,
+            "recall": 0.3333333333333333,
             "hit": true,
             "matched_relevant": [
-              "lei_14_133_2021::chunk_026",
-              "lei_14_133_2021::chunk_087"
+              "lei_14_133_2021::chunk_026"
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_026",
-              "lei_14_133_2021::chunk_087",
+              "lei_14_133_2021::chunk_092",
               "lei_14_133_2021::chunk_366"
             ]
           },
           "5": {
-            "recall": 0.6666666666666666,
+            "recall": 0.3333333333333333,
             "hit": true,
             "matched_relevant": [
-              "lei_14_133_2021::chunk_026",
-              "lei_14_133_2021::chunk_087"
+              "lei_14_133_2021::chunk_026"
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_026",
-              "lei_14_133_2021::chunk_087",
               "lei_14_133_2021::chunk_092",
-              "lei_14_133_2021::chunk_350",
-              "lei_14_133_2021::chunk_366"
+              "lei_14_133_2021::chunk_366",
+              "parecer_21_2023::chunk_001",
+              "parecer_9_2023::chunk_001"
             ]
           },
           "10": {
@@ -244,11 +241,11 @@
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_087",
               "lei_14_133_2021::chunk_092",
-              "lei_14_133_2021::chunk_350",
+              "lei_14_133_2021::chunk_193",
               "lei_14_133_2021::chunk_366",
-              "nota_juridica_1_2024::chunk_016",
+              "parecer_1_2023::chunk_059",
               "parecer_21_2023::chunk_001",
-              "parecer_21_2024::chunk_007",
+              "parecer_25_2023::chunk_001",
               "parecer_9_2023::chunk_001"
             ]
           }
@@ -260,22 +257,20 @@
             "matched_relevant": [],
             "retrieved": [
               "nota_juridica_3_2024::chunk_029",
-              "parecer_12_2024::chunk_007",
-              "parecer_8_2024::chunk_010"
+              "parecer_12_2024::chunk_001",
+              "parecer_12_2024::chunk_007"
             ]
           },
           "5": {
-            "recall": 0.3333333333333333,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_087"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_087",
               "nota_juridica_3_2024::chunk_029",
               "parecer_12_2024::chunk_001",
               "parecer_12_2024::chunk_007",
-              "parecer_8_2024::chunk_010"
+              "parecer_12_2024::chunk_026",
+              "parecer_21_2024::chunk_006"
             ]
           },
           "10": {
@@ -286,15 +281,15 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_087",
-              "lei_14_133_2021::chunk_350",
               "nota_juridica_3_2024::chunk_029",
               "parecer_12_2024::chunk_001",
               "parecer_12_2024::chunk_007",
               "parecer_12_2024::chunk_026",
+              "parecer_12_2024::chunk_027",
               "parecer_21_2023::chunk_001",
-              "parecer_21_2024::chunk_006",
-              "parecer_21_2024::chunk_029",
-              "parecer_8_2024::chunk_010"
+              "parecer_21_2023::chunk_003",
+              "parecer_21_2023::chunk_009",
+              "parecer_21_2024::chunk_006"
             ]
           }
         },
@@ -307,8 +302,8 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_087",
-              "lei_14_133_2021::chunk_350",
-              "parecer_21_2023::chunk_001"
+              "parecer_21_2023::chunk_001",
+              "parecer_21_2024::chunk_006"
             ]
           },
           "5": {
@@ -321,9 +316,9 @@
             "retrieved": [
               "lei_14_133_2021::chunk_026",
               "lei_14_133_2021::chunk_087",
-              "lei_14_133_2021::chunk_366",
               "parecer_21_2023::chunk_001",
-              "parecer_21_2024::chunk_006"
+              "parecer_21_2024::chunk_006",
+              "parecer_8_2024::chunk_010"
             ]
           },
           "10": {
@@ -336,14 +331,14 @@
             "retrieved": [
               "lei_14_133_2021::chunk_026",
               "lei_14_133_2021::chunk_087",
-              "lei_14_133_2021::chunk_199",
+              "lei_14_133_2021::chunk_350",
               "lei_14_133_2021::chunk_366",
+              "parecer_12_2024::chunk_028",
               "parecer_1_2023::chunk_059",
               "parecer_21_2023::chunk_001",
+              "parecer_21_2023::chunk_003",
               "parecer_21_2024::chunk_006",
-              "parecer_24_2023::chunk_001",
-              "parecer_8_2024::chunk_010",
-              "parecer_8_2024::chunk_015"
+              "parecer_8_2024::chunk_010"
             ]
           }
         }
@@ -364,8 +359,8 @@
               "lei_14_133_2021::chunk_171"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_171",
+              "lei_14_133_2021::chunk_293",
               "lei_14_133_2021::chunk_366"
             ]
           },
@@ -377,10 +372,10 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_171",
-              "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_293",
               "lei_14_133_2021::chunk_366",
-              "lei_14_133_2021::chunk_367"
+              "lei_14_133_2021::chunk_367",
+              "parecer_15_2024::chunk_007"
             ]
           },
           "10": {
@@ -390,15 +385,15 @@
               "lei_14_133_2021::chunk_171"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_111",
-              "lei_14_133_2021::chunk_164",
               "lei_14_133_2021::chunk_171",
-              "lei_14_133_2021::chunk_273",
+              "lei_14_133_2021::chunk_276",
               "lei_14_133_2021::chunk_293",
               "lei_14_133_2021::chunk_341",
+              "lei_14_133_2021::chunk_363",
               "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
               "parecer_15_2024::chunk_007",
+              "parecer_15_2025::chunk_001",
               "parecer_21_2023::chunk_001"
             ]
           }
@@ -409,9 +404,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "parecer_12_2024::chunk_011",
               "parecer_15_2024::chunk_001",
-              "parecer_15_2024::chunk_013",
-              "parecer_15_2024::chunk_014"
+              "parecer_15_2024::chunk_013"
             ]
           },
           "5": {
@@ -419,11 +414,11 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "nota_juridica_3_2024::chunk_030",
               "parecer_12_2024::chunk_011",
-              "parecer_15_2024::chunk_000",
               "parecer_15_2024::chunk_001",
               "parecer_15_2024::chunk_013",
-              "parecer_15_2024::chunk_029"
+              "parecer_15_2024::chunk_014"
             ]
           },
           "10": {
@@ -431,16 +426,16 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_177",
-              "lei_14_133_2021::chunk_288",
-              "lei_14_133_2021::chunk_296",
-              "lei_14_133_2021::chunk_297",
               "nota_juridica_3_2024::chunk_030",
               "parecer_12_2024::chunk_011",
+              "parecer_12_2024::chunk_027",
               "parecer_15_2024::chunk_000",
               "parecer_15_2024::chunk_001",
               "parecer_15_2024::chunk_013",
-              "parecer_15_2024::chunk_014"
+              "parecer_15_2024::chunk_014",
+              "parecer_15_2024::chunk_015",
+              "parecer_18_2024::chunk_029",
+              "parecer_20_2023::chunk_018"
             ]
           }
         },
@@ -452,9 +447,9 @@
               "lei_14_133_2021::chunk_171"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_110",
               "lei_14_133_2021::chunk_171",
-              "parecer_15_2024::chunk_000"
+              "parecer_15_2024::chunk_000",
+              "parecer_15_2024::chunk_007"
             ]
           },
           "5": {
@@ -465,10 +460,10 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_171",
+              "parecer_12_2024::chunk_028",
               "parecer_15_2024::chunk_000",
-              "parecer_15_2024::chunk_001",
               "parecer_15_2024::chunk_007",
-              "parecer_15_2024::chunk_014"
+              "parecer_15_2024::chunk_035"
             ]
           },
           "10": {
@@ -480,14 +475,14 @@
             "retrieved": [
               "lei_14_133_2021::chunk_171",
               "lei_14_133_2021::chunk_366",
-              "nota_juridica_3_2024::chunk_030",
-              "parecer_12_2024::chunk_027",
+              "nota_juridica_1_2024::chunk_078",
               "parecer_12_2024::chunk_028",
+              "parecer_13_2025::chunk_016",
               "parecer_15_2024::chunk_000",
+              "parecer_15_2024::chunk_002",
               "parecer_15_2024::chunk_007",
-              "parecer_15_2024::chunk_035",
-              "parecer_20_2023::chunk_051",
-              "parecer_8_2024::chunk_015"
+              "parecer_15_2024::chunk_013",
+              "parecer_15_2024::chunk_035"
             ]
           }
         }
@@ -507,23 +502,21 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_170",
               "lei_14_133_2021::chunk_280",
-              "lei_14_133_2021::chunk_293",
               "lei_14_133_2021::chunk_366"
             ]
           },
           "5": {
-            "recall": 0.5,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_164"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_164",
               "lei_14_133_2021::chunk_170",
               "lei_14_133_2021::chunk_280",
-              "lei_14_133_2021::chunk_341",
-              "lei_14_133_2021::chunk_366"
+              "lei_14_133_2021::chunk_366",
+              "lei_14_133_2021::chunk_367",
+              "parecer_1_2023::chunk_059"
             ]
           },
           "10": {
@@ -535,14 +528,14 @@
             "retrieved": [
               "lei_14_133_2021::chunk_164",
               "lei_14_133_2021::chunk_170",
+              "lei_14_133_2021::chunk_171",
               "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_280",
-              "lei_14_133_2021::chunk_293",
               "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
-              "nota_juridica_3_2024::chunk_030",
-              "parecer_1_2023::chunk_059",
-              "parecer_21_2024::chunk_024"
+              "parecer_1_2023::chunk_009",
+              "parecer_1_2023::chunk_047",
+              "parecer_1_2023::chunk_059"
             ]
           }
         },
@@ -554,7 +547,7 @@
             "retrieved": [
               "lei_14_133_2021::chunk_366",
               "nota_juridica_3_2024::chunk_030",
-              "parecer_15_2024::chunk_013"
+              "parecer_20_2023::chunk_018"
             ]
           },
           "5": {
@@ -565,8 +558,8 @@
               "lei_14_133_2021::chunk_366",
               "nota_juridica_3_2024::chunk_030",
               "parecer_15_2024::chunk_013",
-              "parecer_24_2023::chunk_002",
-              "parecer_8_2024::chunk_015"
+              "parecer_20_2023::chunk_018",
+              "parecer_20_2023::chunk_019"
             ]
           },
           "10": {
@@ -575,15 +568,15 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_366",
+              "nota_juridica_1_2024::chunk_065",
               "nota_juridica_3_2024::chunk_030",
               "parecer_15_2024::chunk_013",
               "parecer_15_2024::chunk_014",
-              "parecer_18_2024::chunk_045",
+              "parecer_20_2023::chunk_016",
               "parecer_20_2023::chunk_018",
               "parecer_20_2023::chunk_019",
-              "parecer_20_2023::chunk_050",
-              "parecer_8_2024::chunk_015",
-              "parecer_8_2025::chunk_013"
+              "parecer_20_2023::chunk_051",
+              "parecer_8_2024::chunk_021"
             ]
           }
         },
@@ -595,7 +588,7 @@
             "retrieved": [
               "lei_14_133_2021::chunk_366",
               "nota_juridica_3_2024::chunk_030",
-              "parecer_20_2023::chunk_018"
+              "parecer_1_2023::chunk_009"
             ]
           },
           "5": {
@@ -607,16 +600,17 @@
               "nota_juridica_3_2024::chunk_030",
               "parecer_1_2023::chunk_009",
               "parecer_1_2023::chunk_022",
-              "parecer_1_2023::chunk_047"
+              "parecer_1_2023::chunk_023"
             ]
           },
           "10": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 0.5,
+            "hit": true,
+            "matched_relevant": [
+              "lei_14_133_2021::chunk_164"
+            ],
             "retrieved": [
-              "lei_14_133_2021::chunk_201",
-              "lei_14_133_2021::chunk_273",
+              "lei_14_133_2021::chunk_164",
               "lei_14_133_2021::chunk_366",
               "nota_juridica_3_2024::chunk_030",
               "parecer_1_2023::chunk_009",
@@ -624,7 +618,8 @@
               "parecer_1_2023::chunk_023",
               "parecer_1_2023::chunk_047",
               "parecer_1_2023::chunk_059",
-              "parecer_20_2023::chunk_018"
+              "parecer_20_2023::chunk_018",
+              "parecer_8_2024::chunk_021"
             ]
           }
         }
@@ -650,16 +645,14 @@
             ]
           },
           "5": {
-            "recall": 0.5,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_164"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_114",
-              "lei_14_133_2021::chunk_164",
               "lei_14_133_2021::chunk_366",
+              "nota_juridica_1_2024::chunk_019",
               "nota_juridica_3_2024::chunk_024"
             ]
           },
@@ -668,16 +661,16 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_029",
+              "lei_14_133_2021::chunk_045",
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_114",
-              "lei_14_133_2021::chunk_208",
+              "lei_14_133_2021::chunk_226",
               "lei_14_133_2021::chunk_341",
-              "lei_14_133_2021::chunk_363",
               "lei_14_133_2021::chunk_366",
               "nota_juridica_1_2024::chunk_019",
               "nota_juridica_3_2024::chunk_024",
-              "parecer_15_2024::chunk_012"
+              "parecer_15_2024::chunk_012",
+              "parecer_21_2023::chunk_001"
             ]
           }
         },
@@ -688,7 +681,7 @@
             "matched_relevant": [],
             "retrieved": [
               "nota_juridica_3_2024::chunk_030",
-              "parecer_20_2023::chunk_018",
+              "parecer_15_2024::chunk_013",
               "parecer_27_2025::chunk_016"
             ]
           },
@@ -699,25 +692,23 @@
             "retrieved": [
               "nota_juridica_3_2024::chunk_030",
               "parecer_15_2024::chunk_013",
-              "parecer_1_2023::chunk_048",
-              "parecer_20_2023::chunk_018",
+              "parecer_18_2024::chunk_035",
+              "parecer_20_2023::chunk_039",
               "parecer_27_2025::chunk_016"
             ]
           },
           "10": {
-            "recall": 0.5,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_164"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_164",
-              "nota_juridica_3_2024::chunk_019",
+              "nota_juridica_3_2024::chunk_000",
               "nota_juridica_3_2024::chunk_030",
-              "parecer_15_2024::chunk_008",
+              "parecer_14_2024::chunk_029",
               "parecer_15_2024::chunk_013",
+              "parecer_17_2024::chunk_040",
               "parecer_18_2024::chunk_035",
-              "parecer_18_2024::chunk_045",
+              "parecer_1_2023::chunk_060",
               "parecer_20_2023::chunk_018",
               "parecer_20_2023::chunk_039",
               "parecer_27_2025::chunk_016"
@@ -726,26 +717,22 @@
         },
         "hybrid": {
           "3": {
-            "recall": 0.5,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_164"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_164",
               "nota_juridica_3_2024::chunk_024",
-              "nota_juridica_3_2024::chunk_030"
+              "nota_juridica_3_2024::chunk_030",
+              "parecer_15_2024::chunk_013"
             ]
           },
           "5": {
-            "recall": 0.5,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_164"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_164",
-              "lei_14_133_2021::chunk_366",
+              "nota_juridica_1_2024::chunk_023",
+              "nota_juridica_3_2024::chunk_019",
               "nota_juridica_3_2024::chunk_024",
               "nota_juridica_3_2024::chunk_030",
               "parecer_15_2024::chunk_013"
@@ -758,16 +745,16 @@
               "lei_14_133_2021::chunk_164"
             ],
             "retrieved": [
+              "lei_14_133_2021::chunk_028",
               "lei_14_133_2021::chunk_164",
-              "lei_14_133_2021::chunk_166",
-              "lei_14_133_2021::chunk_199",
               "lei_14_133_2021::chunk_226",
               "lei_14_133_2021::chunk_366",
               "nota_juridica_1_2024::chunk_023",
               "nota_juridica_3_2024::chunk_019",
               "nota_juridica_3_2024::chunk_024",
               "nota_juridica_3_2024::chunk_030",
-              "parecer_15_2024::chunk_013"
+              "parecer_15_2024::chunk_013",
+              "parecer_1_2023::chunk_060"
             ]
           }
         }
@@ -788,18 +775,20 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_366",
-              "parecer_14_2025::chunk_034"
+              "parecer_14_2025::chunk_034",
+              "parecer_14_2025::chunk_035"
             ]
           },
           "5": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 0.3333333333333333,
+            "hit": true,
+            "matched_relevant": [
+              "lei_14_133_2021::chunk_304"
+            ],
             "retrieved": [
-              "lei_14_133_2021::chunk_254",
               "lei_14_133_2021::chunk_273",
+              "lei_14_133_2021::chunk_304",
               "lei_14_133_2021::chunk_366",
               "parecer_14_2025::chunk_034",
               "parecer_14_2025::chunk_035"
@@ -813,13 +802,13 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_011",
-              "lei_14_133_2021::chunk_254",
+              "lei_14_133_2021::chunk_171",
               "lei_14_133_2021::chunk_273",
+              "lei_14_133_2021::chunk_276",
               "lei_14_133_2021::chunk_294",
               "lei_14_133_2021::chunk_304",
-              "lei_14_133_2021::chunk_363",
+              "lei_14_133_2021::chunk_305",
               "lei_14_133_2021::chunk_366",
-              "nota_juridica_1_2024::chunk_016",
               "parecer_14_2025::chunk_034",
               "parecer_14_2025::chunk_035"
             ]
@@ -827,13 +816,11 @@
         },
         "sparse": {
           "3": {
-            "recall": 0.3333333333333333,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_163"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_163",
+              "nota_juridica_1_2024::chunk_012",
               "nota_juridica_1_2024::chunk_037",
               "parecer_14_2025::chunk_034"
             ]
@@ -842,13 +829,13 @@
             "recall": 0.3333333333333333,
             "hit": true,
             "matched_relevant": [
-              "lei_14_133_2021::chunk_163"
+              "lei_14_133_2021::chunk_304"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_163",
+              "lei_14_133_2021::chunk_304",
               "nota_juridica_1_2024::chunk_012",
-              "nota_juridica_1_2024::chunk_016",
               "nota_juridica_1_2024::chunk_037",
+              "nota_juridica_1_2024::chunk_086",
               "parecer_14_2025::chunk_034"
             ]
           },
@@ -863,13 +850,13 @@
               "lei_14_133_2021::chunk_163",
               "lei_14_133_2021::chunk_304",
               "nota_juridica_1_2024::chunk_012",
-              "nota_juridica_1_2024::chunk_016",
               "nota_juridica_1_2024::chunk_037",
+              "nota_juridica_1_2024::chunk_079",
               "nota_juridica_1_2024::chunk_086",
-              "parecer_14_2025::chunk_032",
               "parecer_14_2025::chunk_034",
               "parecer_14_2025::chunk_035",
-              "parecer_14_2025::chunk_042"
+              "parecer_20_2023::chunk_047",
+              "parecer_8_2024::chunk_006"
             ]
           }
         },
@@ -882,38 +869,40 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_304",
-              "nota_juridica_1_2024::chunk_016",
-              "parecer_14_2025::chunk_034"
+              "parecer_14_2025::chunk_034",
+              "parecer_14_2025::chunk_035"
             ]
           },
           "5": {
-            "recall": 0.3333333333333333,
+            "recall": 0.6666666666666666,
             "hit": true,
             "matched_relevant": [
+              "lei_14_133_2021::chunk_302",
               "lei_14_133_2021::chunk_304"
             ],
             "retrieved": [
+              "lei_14_133_2021::chunk_302",
               "lei_14_133_2021::chunk_304",
-              "nota_juridica_1_2024::chunk_016",
-              "nota_juridica_1_2024::chunk_067",
+              "lei_14_133_2021::chunk_366",
               "parecer_14_2025::chunk_034",
               "parecer_14_2025::chunk_035"
             ]
           },
           "10": {
-            "recall": 0.3333333333333333,
+            "recall": 0.6666666666666666,
             "hit": true,
             "matched_relevant": [
+              "lei_14_133_2021::chunk_302",
               "lei_14_133_2021::chunk_304"
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_048",
+              "lei_14_133_2021::chunk_302",
               "lei_14_133_2021::chunk_304",
               "lei_14_133_2021::chunk_366",
-              "nota_juridica_1_2024::chunk_016",
-              "nota_juridica_1_2024::chunk_044",
-              "nota_juridica_1_2024::chunk_067",
-              "parecer_13_2025::chunk_001",
+              "nota_juridica_1_2024::chunk_037",
+              "nota_juridica_1_2024::chunk_065",
+              "nota_juridica_1_2024::chunk_066",
               "parecer_14_2025::chunk_034",
               "parecer_14_2025::chunk_035",
               "parecer_1_2023::chunk_059"
@@ -938,7 +927,7 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_304",
+              "lei_14_133_2021::chunk_366",
               "parecer_14_2025::chunk_001",
               "parecer_21_2023::chunk_001"
             ]
@@ -948,9 +937,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_304",
+              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_366",
+              "parecer_13_2025::chunk_049",
               "parecer_14_2025::chunk_001",
               "parecer_21_2023::chunk_001"
             ]
@@ -962,11 +951,11 @@
             "retrieved": [
               "lei_14_133_2021::chunk_011",
               "lei_14_133_2021::chunk_048",
-              "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_363",
               "lei_14_133_2021::chunk_366",
-              "nota_juridica_1_2024::chunk_016",
+              "parecer_13_2025::chunk_017",
+              "parecer_13_2025::chunk_018",
+              "parecer_13_2025::chunk_049",
               "parecer_14_2025::chunk_001",
               "parecer_18_2024::chunk_031",
               "parecer_21_2023::chunk_001"
@@ -988,21 +977,6 @@
             ]
           },
           "5": {
-            "recall": 0.5,
-            "hit": true,
-            "matched_relevant": [
-              "lei_14_133_2021::chunk_309",
-              "lei_14_133_2021::chunk_310"
-            ],
-            "retrieved": [
-              "lei_14_133_2021::chunk_309",
-              "lei_14_133_2021::chunk_310",
-              "parecer_14_2025::chunk_017",
-              "parecer_14_2025::chunk_023",
-              "parecer_14_2025::chunk_024"
-            ]
-          },
-          "10": {
             "recall": 0.75,
             "hit": true,
             "matched_relevant": [
@@ -1011,16 +985,33 @@
               "lei_14_133_2021::chunk_311"
             ],
             "retrieved": [
+              "lei_14_133_2021::chunk_309",
+              "lei_14_133_2021::chunk_310",
+              "lei_14_133_2021::chunk_311",
+              "parecer_14_2025::chunk_023",
+              "parecer_14_2025::chunk_024"
+            ]
+          },
+          "10": {
+            "recall": 1.0,
+            "hit": true,
+            "matched_relevant": [
+              "lei_14_133_2021::chunk_307",
+              "lei_14_133_2021::chunk_309",
+              "lei_14_133_2021::chunk_310",
+              "lei_14_133_2021::chunk_311"
+            ],
+            "retrieved": [
               "lei_14_133_2021::chunk_203",
-              "lei_14_133_2021::chunk_204",
+              "lei_14_133_2021::chunk_307",
               "lei_14_133_2021::chunk_309",
               "lei_14_133_2021::chunk_310",
               "lei_14_133_2021::chunk_311",
               "lei_14_133_2021::chunk_316",
-              "lei_14_133_2021::chunk_328",
               "parecer_14_2025::chunk_017",
               "parecer_14_2025::chunk_023",
-              "parecer_14_2025::chunk_024"
+              "parecer_14_2025::chunk_024",
+              "parecer_14_2025::chunk_025"
             ]
           }
         },
@@ -1032,44 +1023,44 @@
               "lei_14_133_2021::chunk_309"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_304",
               "lei_14_133_2021::chunk_309",
+              "parecer_14_2025::chunk_001",
               "parecer_14_2025::chunk_017"
             ]
           },
           "5": {
-            "recall": 0.25,
+            "recall": 0.5,
             "hit": true,
             "matched_relevant": [
-              "lei_14_133_2021::chunk_309"
+              "lei_14_133_2021::chunk_309",
+              "lei_14_133_2021::chunk_311"
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_309",
-              "lei_14_133_2021::chunk_319",
-              "lei_14_133_2021::chunk_346",
+              "lei_14_133_2021::chunk_311",
+              "parecer_13_2025::chunk_017",
               "parecer_14_2025::chunk_001",
               "parecer_14_2025::chunk_017"
             ]
           },
           "10": {
-            "recall": 0.75,
+            "recall": 0.5,
             "hit": true,
             "matched_relevant": [
               "lei_14_133_2021::chunk_309",
-              "lei_14_133_2021::chunk_310",
               "lei_14_133_2021::chunk_311"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_304",
+              "lei_14_133_2021::chunk_011",
               "lei_14_133_2021::chunk_309",
-              "lei_14_133_2021::chunk_310",
               "lei_14_133_2021::chunk_311",
-              "lei_14_133_2021::chunk_319",
+              "parecer_13_2025::chunk_001",
               "parecer_13_2025::chunk_017",
               "parecer_14_2025::chunk_001",
               "parecer_14_2025::chunk_017",
-              "parecer_14_2025::chunk_023",
-              "parecer_21_2023::chunk_001"
+              "parecer_1_2023::chunk_060",
+              "parecer_21_2023::chunk_001",
+              "parecer_25_2023::chunk_008"
             ]
           }
         }
@@ -1089,9 +1080,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_259",
               "lei_14_133_2021::chunk_268",
-              "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_294"
+              "lei_14_133_2021::chunk_273"
             ]
           },
           "5": {
@@ -1099,11 +1090,11 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_236",
+              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_259",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_292"
+              "lei_14_133_2021::chunk_345"
             ]
           },
           "10": {
@@ -1114,13 +1105,13 @@
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_236",
               "lei_14_133_2021::chunk_259",
+              "lei_14_133_2021::chunk_260",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_272",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_292",
               "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_294",
-              "lei_14_133_2021::chunk_345"
+              "lei_14_133_2021::chunk_345",
+              "parecer_24_2023::chunk_001"
             ]
           }
         },
@@ -1131,8 +1122,8 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_261",
-              "parecer_24_2023::chunk_001",
-              "parecer_24_2023::chunk_017"
+              "parecer_24_2023::chunk_017",
+              "parecer_24_2023::chunk_036"
             ]
           },
           "5": {
@@ -1155,9 +1146,9 @@
               "lei_14_133_2021::chunk_261",
               "nota_juridica_1_2024::chunk_046",
               "parecer_12_2024::chunk_014",
-              "parecer_20_2023::chunk_005",
+              "parecer_20_2023::chunk_006",
               "parecer_24_2023::chunk_001",
-              "parecer_24_2023::chunk_010",
+              "parecer_24_2023::chunk_013",
               "parecer_24_2023::chunk_014",
               "parecer_24_2023::chunk_017",
               "parecer_24_2023::chunk_018",
@@ -1181,28 +1172,31 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_003",
               "lei_14_133_2021::chunk_257",
               "lei_14_133_2021::chunk_260",
               "parecer_24_2023::chunk_001",
+              "parecer_24_2023::chunk_013",
               "parecer_24_2023::chunk_014"
             ]
           },
           "10": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 1.0,
+            "hit": true,
+            "matched_relevant": [
+              "lei_14_133_2021::chunk_256",
+              "lei_14_133_2021::chunk_258"
+            ],
             "retrieved": [
-              "lei_14_133_2021::chunk_009",
+              "lei_14_133_2021::chunk_004",
               "lei_14_133_2021::chunk_246",
+              "lei_14_133_2021::chunk_256",
               "lei_14_133_2021::chunk_257",
+              "lei_14_133_2021::chunk_258",
               "lei_14_133_2021::chunk_260",
               "lei_14_133_2021::chunk_279",
-              "lei_14_133_2021::chunk_345",
               "parecer_24_2023::chunk_001",
               "parecer_24_2023::chunk_013",
-              "parecer_24_2023::chunk_014",
-              "parecer_24_2023::chunk_036"
+              "parecer_24_2023::chunk_014"
             ]
           }
         }
@@ -1223,8 +1217,8 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_236",
-              "lei_14_133_2021::chunk_254",
-              "lei_14_133_2021::chunk_273"
+              "lei_14_133_2021::chunk_273",
+              "lei_14_133_2021::chunk_294"
             ]
           },
           "5": {
@@ -1232,11 +1226,11 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_226",
               "lei_14_133_2021::chunk_236",
-              "lei_14_133_2021::chunk_254",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_292",
-              "lei_14_133_2021::chunk_294"
+              "lei_14_133_2021::chunk_294",
+              "lei_14_133_2021::chunk_345"
             ]
           },
           "10": {
@@ -1244,12 +1238,12 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_009",
+              "lei_14_133_2021::chunk_071",
               "lei_14_133_2021::chunk_226",
               "lei_14_133_2021::chunk_236",
-              "lei_14_133_2021::chunk_254",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
+              "lei_14_133_2021::chunk_285",
               "lei_14_133_2021::chunk_292",
               "lei_14_133_2021::chunk_293",
               "lei_14_133_2021::chunk_294",
@@ -1263,9 +1257,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_009",
               "parecer_10_2025::chunk_008",
-              "parecer_14_2025::chunk_041",
-              "parecer_18_2024::chunk_034"
+              "parecer_14_2025::chunk_041"
             ]
           },
           "5": {
@@ -1274,8 +1268,8 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_009",
-              "lei_14_133_2021::chunk_066",
               "parecer_10_2025::chunk_008",
+              "parecer_10_2025::chunk_009",
               "parecer_14_2025::chunk_041",
               "parecer_18_2024::chunk_034"
             ]
@@ -1286,15 +1280,15 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_009",
-              "lei_14_133_2021::chunk_134",
               "lei_14_133_2021::chunk_223",
-              "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_356",
               "lei_14_133_2021::chunk_357",
+              "nota_juridica_3_2024::chunk_029",
               "parecer_10_2025::chunk_008",
               "parecer_10_2025::chunk_009",
               "parecer_14_2025::chunk_041",
-              "parecer_18_2024::chunk_034"
+              "parecer_15_2024::chunk_001",
+              "parecer_18_2024::chunk_034",
+              "parecer_21_2024::chunk_006"
             ]
           }
         },
@@ -1305,7 +1299,7 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_009",
-              "lei_14_133_2021::chunk_134",
+              "lei_14_133_2021::chunk_267",
               "parecer_10_2025::chunk_009"
             ]
           },
@@ -1315,7 +1309,7 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_009",
-              "lei_14_133_2021::chunk_134",
+              "lei_14_133_2021::chunk_124",
               "lei_14_133_2021::chunk_267",
               "lei_14_133_2021::chunk_268",
               "parecer_10_2025::chunk_009"
@@ -1327,15 +1321,15 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_009",
-              "lei_14_133_2021::chunk_011",
+              "lei_14_133_2021::chunk_010",
               "lei_14_133_2021::chunk_124",
-              "lei_14_133_2021::chunk_134",
               "lei_14_133_2021::chunk_267",
               "lei_14_133_2021::chunk_268",
+              "lei_14_133_2021::chunk_271",
+              "lei_14_133_2021::chunk_272",
               "lei_14_133_2021::chunk_293",
               "parecer_10_2025::chunk_009",
-              "parecer_13_2025::chunk_001",
-              "parecer_18_2024::chunk_034"
+              "parecer_10_2025::chunk_019"
             ]
           }
         }
@@ -1359,7 +1353,7 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_000",
-              "lei_14_133_2021::chunk_341",
+              "parecer_27_2025::chunk_000",
               "parecer_8_2024::chunk_001"
             ]
           },
@@ -1371,28 +1365,29 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_000",
-              "lei_14_133_2021::chunk_107",
-              "lei_14_133_2021::chunk_294",
+              "parecer_13_2025::chunk_000",
+              "parecer_17_2024::chunk_000",
               "parecer_27_2025::chunk_000",
               "parecer_8_2024::chunk_001"
             ]
           },
           "10": {
-            "recall": 0.3333333333333333,
+            "recall": 0.6666666666666666,
             "hit": true,
             "matched_relevant": [
+              "parecer_8_2024::chunk_000",
               "parecer_8_2024::chunk_001"
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_000",
-              "lei_14_133_2021::chunk_048",
-              "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_294",
+              "lei_14_133_2021::chunk_189",
+              "lei_14_133_2021::chunk_368",
               "parecer_13_2025::chunk_000",
-              "parecer_14_2024::chunk_027",
               "parecer_17_2024::chunk_000",
+              "parecer_18_2024::chunk_000",
               "parecer_27_2025::chunk_000",
+              "parecer_7_2024::chunk_000",
+              "parecer_8_2024::chunk_000",
               "parecer_8_2024::chunk_001"
             ]
           }
@@ -1404,7 +1399,7 @@
             "matched_relevant": [],
             "retrieved": [
               "parecer_12_2024::chunk_026",
-              "parecer_15_2025::chunk_003",
+              "parecer_15_2025::chunk_001",
               "parecer_18_2024::chunk_048"
             ]
           },
@@ -1415,40 +1410,40 @@
             "retrieved": [
               "parecer_12_2024::chunk_026",
               "parecer_15_2025::chunk_001",
-              "parecer_18_2024::chunk_003",
               "parecer_18_2024::chunk_048",
-              "parecer_25_2023::chunk_002"
+              "parecer_20_2023::chunk_058",
+              "parecer_24_2023::chunk_034"
             ]
           },
           "10": {
-            "recall": 0.3333333333333333,
-            "hit": true,
-            "matched_relevant": [
-              "parecer_8_2024::chunk_002"
-            ],
+            "recall": 0.0,
+            "hit": false,
+            "matched_relevant": [],
             "retrieved": [
+              "nota_juridica_1_2024::chunk_015",
               "parecer_12_2024::chunk_026",
               "parecer_15_2025::chunk_001",
-              "parecer_15_2025::chunk_002",
-              "parecer_18_2024::chunk_003",
               "parecer_18_2024::chunk_048",
               "parecer_20_2023::chunk_058",
-              "parecer_21_2023::chunk_003",
               "parecer_24_2023::chunk_034",
+              "parecer_24_2023::chunk_035",
               "parecer_25_2023::chunk_002",
-              "parecer_8_2024::chunk_002"
+              "parecer_27_2025::chunk_020",
+              "parecer_8_2024::chunk_023"
             ]
           }
         },
         "hybrid": {
           "3": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 0.3333333333333333,
+            "hit": true,
+            "matched_relevant": [
+              "parecer_8_2024::chunk_000"
+            ],
             "retrieved": [
-              "parecer_14_2024::chunk_027",
               "parecer_15_2025::chunk_001",
-              "parecer_17_2024::chunk_000"
+              "parecer_17_2024::chunk_000",
+              "parecer_8_2024::chunk_000"
             ]
           },
           "5": {
@@ -1458,11 +1453,11 @@
               "parecer_8_2024::chunk_000"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_107",
               "parecer_15_2025::chunk_001",
               "parecer_17_2024::chunk_000",
-              "parecer_8_2024::chunk_000",
-              "parecer_8_2024::chunk_021"
+              "parecer_18_2024::chunk_000",
+              "parecer_20_2023::chunk_057",
+              "parecer_8_2024::chunk_000"
             ]
           },
           "10": {
@@ -1472,15 +1467,15 @@
               "parecer_8_2024::chunk_000"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_294",
-              "parecer_14_2024::chunk_027",
-              "parecer_15_2024::chunk_007",
+              "parecer_12_2024::chunk_000",
               "parecer_15_2025::chunk_001",
-              "parecer_15_2025::chunk_002",
               "parecer_17_2024::chunk_000",
+              "parecer_17_2024::chunk_058",
               "parecer_18_2024::chunk_000",
-              "parecer_25_2023::chunk_002",
+              "parecer_20_2023::chunk_057",
+              "parecer_21_2024::chunk_000",
               "parecer_27_2025::chunk_000",
+              "parecer_7_2024::chunk_000",
               "parecer_8_2024::chunk_000"
             ]
           }
@@ -1503,8 +1498,8 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_236",
-              "lei_14_133_2021::chunk_268",
-              "lei_14_133_2021::chunk_294"
+              "lei_14_133_2021::chunk_259",
+              "lei_14_133_2021::chunk_268"
             ]
           },
           "5": {
@@ -1516,7 +1511,7 @@
               "lei_14_133_2021::chunk_259",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_294"
+              "lei_14_133_2021::chunk_345"
             ]
           },
           "10": {
@@ -1524,16 +1519,16 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_033",
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_236",
               "lei_14_133_2021::chunk_259",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_292",
-              "lei_14_133_2021::chunk_293",
+              "lei_14_133_2021::chunk_278",
               "lei_14_133_2021::chunk_294",
-              "lei_14_133_2021::chunk_345",
-              "lei_14_133_2021::chunk_363"
+              "lei_14_133_2021::chunk_336",
+              "lei_14_133_2021::chunk_345"
             ]
           }
         },
@@ -1544,7 +1539,7 @@
             "matched_relevant": [],
             "retrieved": [
               "parecer_10_2025::chunk_013",
-              "parecer_10_2025::chunk_014",
+              "parecer_10_2025::chunk_017",
               "parecer_10_2025::chunk_024"
             ]
           },
@@ -1559,23 +1554,22 @@
               "parecer_10_2025::chunk_013",
               "parecer_10_2025::chunk_014",
               "parecer_10_2025::chunk_017",
-              "parecer_13_2025::chunk_040"
+              "parecer_10_2025::chunk_024"
             ]
           },
           "10": {
-            "recall": 1.0,
+            "recall": 0.6666666666666666,
             "hit": true,
             "matched_relevant": [
               "parecer_10_2025::chunk_001",
-              "parecer_10_2025::chunk_002",
-              "parecer_10_2025::chunk_003"
+              "parecer_10_2025::chunk_002"
             ],
             "retrieved": [
               "parecer_10_2025::chunk_001",
               "parecer_10_2025::chunk_002",
-              "parecer_10_2025::chunk_003",
               "parecer_10_2025::chunk_013",
               "parecer_10_2025::chunk_014",
+              "parecer_10_2025::chunk_016",
               "parecer_10_2025::chunk_017",
               "parecer_10_2025::chunk_020",
               "parecer_10_2025::chunk_024",
@@ -1600,11 +1594,11 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_271",
+              "lei_14_133_2021::chunk_268",
+              "parecer_10_2025::chunk_009",
               "parecer_10_2025::chunk_011",
               "parecer_10_2025::chunk_013",
-              "parecer_10_2025::chunk_020",
-              "parecer_10_2025::chunk_022"
+              "parecer_10_2025::chunk_020"
             ]
           },
           "10": {
@@ -1614,16 +1608,16 @@
               "parecer_10_2025::chunk_001"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_271",
+              "lei_14_133_2021::chunk_236",
+              "lei_14_133_2021::chunk_268",
               "parecer_10_2025::chunk_001",
               "parecer_10_2025::chunk_005",
               "parecer_10_2025::chunk_009",
               "parecer_10_2025::chunk_011",
               "parecer_10_2025::chunk_013",
               "parecer_10_2025::chunk_014",
-              "parecer_10_2025::chunk_020",
-              "parecer_10_2025::chunk_022",
-              "parecer_18_2024::chunk_031"
+              "parecer_10_2025::chunk_017",
+              "parecer_10_2025::chunk_020"
             ]
           }
         }
@@ -1644,7 +1638,7 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_092",
+              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_273",
               "parecer_8_2025::chunk_009"
             ]
@@ -1655,9 +1649,9 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_048",
-              "lei_14_133_2021::chunk_092",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_294",
+              "parecer_18_2024::chunk_037",
+              "parecer_8_2025::chunk_003",
               "parecer_8_2025::chunk_009"
             ]
           },
@@ -1667,12 +1661,12 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_048",
-              "lei_14_133_2021::chunk_092",
-              "lei_14_133_2021::chunk_157",
               "lei_14_133_2021::chunk_236",
               "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_294",
-              "lei_14_133_2021::chunk_350",
+              "lei_14_133_2021::chunk_304",
+              "parecer_13_2025::chunk_017",
+              "parecer_14_2025::chunk_001",
               "parecer_18_2024::chunk_037",
               "parecer_8_2025::chunk_003",
               "parecer_8_2025::chunk_009"
@@ -1688,22 +1682,23 @@
             ],
             "retrieved": [
               "parecer_8_2025::chunk_001",
-              "parecer_8_2025::chunk_008",
-              "parecer_8_2025::chunk_013"
+              "parecer_8_2025::chunk_003",
+              "parecer_8_2025::chunk_008"
             ]
           },
           "5": {
-            "recall": 0.3333333333333333,
+            "recall": 0.6666666666666666,
             "hit": true,
             "matched_relevant": [
-              "parecer_8_2025::chunk_001"
+              "parecer_8_2025::chunk_001",
+              "parecer_8_2025::chunk_002"
             ],
             "retrieved": [
-              "parecer_15_2025::chunk_002",
-              "parecer_20_2023::chunk_021",
               "parecer_8_2025::chunk_001",
+              "parecer_8_2025::chunk_002",
               "parecer_8_2025::chunk_003",
-              "parecer_8_2025::chunk_008"
+              "parecer_8_2025::chunk_008",
+              "parecer_8_2025::chunk_024"
             ]
           },
           "10": {
@@ -1714,13 +1709,13 @@
               "parecer_8_2025::chunk_002"
             ],
             "retrieved": [
-              "parecer_15_2025::chunk_003",
-              "parecer_21_2023::chunk_003",
               "parecer_8_2025::chunk_001",
               "parecer_8_2025::chunk_002",
               "parecer_8_2025::chunk_003",
               "parecer_8_2025::chunk_006",
+              "parecer_8_2025::chunk_007",
               "parecer_8_2025::chunk_008",
+              "parecer_8_2025::chunk_009",
               "parecer_8_2025::chunk_010",
               "parecer_8_2025::chunk_013",
               "parecer_8_2025::chunk_024"
@@ -1733,9 +1728,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "parecer_14_2024::chunk_027",
               "parecer_8_2025::chunk_003",
-              "parecer_8_2025::chunk_009"
+              "parecer_8_2025::chunk_009",
+              "parecer_8_2025::chunk_018"
             ]
           },
           "5": {
@@ -1743,8 +1738,8 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_273",
-              "parecer_21_2023::chunk_003",
+              "parecer_10_2025::chunk_005",
+              "parecer_25_2023::chunk_008",
               "parecer_8_2025::chunk_003",
               "parecer_8_2025::chunk_009",
               "parecer_8_2025::chunk_018"
@@ -1757,11 +1752,11 @@
               "parecer_8_2025::chunk_001"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_092",
-              "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_293",
+              "lei_14_133_2021::chunk_048",
               "parecer_10_2025::chunk_005",
-              "parecer_21_2023::chunk_003",
+              "parecer_10_2025::chunk_013",
+              "parecer_14_2025::chunk_001",
+              "parecer_25_2023::chunk_008",
               "parecer_8_2025::chunk_001",
               "parecer_8_2025::chunk_003",
               "parecer_8_2025::chunk_008",
@@ -1787,9 +1782,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_341",
               "lei_14_133_2021::chunk_366",
-              "parecer_1_2023::chunk_009"
+              "parecer_1_2023::chunk_009",
+              "parecer_1_2023::chunk_023"
             ]
           },
           "5": {
@@ -1797,11 +1792,11 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_366",
               "parecer_1_2023::chunk_009",
+              "parecer_1_2023::chunk_022",
               "parecer_1_2023::chunk_023",
-              "parecer_1_2023::chunk_059"
+              "parecer_1_2023::chunk_034"
             ]
           },
           "10": {
@@ -1809,15 +1804,15 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_092",
-              "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_294",
-              "lei_14_133_2021::chunk_341",
+              "lei_14_133_2021::chunk_170",
               "lei_14_133_2021::chunk_366",
               "parecer_1_2023::chunk_009",
+              "parecer_1_2023::chunk_019",
               "parecer_1_2023::chunk_022",
               "parecer_1_2023::chunk_023",
               "parecer_1_2023::chunk_034",
+              "parecer_1_2023::chunk_045",
+              "parecer_1_2023::chunk_047",
               "parecer_1_2023::chunk_059"
             ]
           }
@@ -1831,7 +1826,7 @@
             ],
             "retrieved": [
               "parecer_1_2023::chunk_000",
-              "parecer_1_2023::chunk_037",
+              "parecer_1_2023::chunk_045",
               "parecer_1_2023::chunk_058"
             ]
           },
@@ -1843,10 +1838,10 @@
             ],
             "retrieved": [
               "parecer_1_2023::chunk_000",
+              "parecer_1_2023::chunk_007",
+              "parecer_1_2023::chunk_009",
               "parecer_1_2023::chunk_045",
-              "parecer_1_2023::chunk_058",
-              "parecer_20_2023::chunk_057",
-              "parecer_20_2023::chunk_062"
+              "parecer_1_2023::chunk_058"
             ]
           },
           "10": {
@@ -1856,16 +1851,16 @@
               "parecer_1_2023::chunk_000"
             ],
             "retrieved": [
-              "parecer_12_2024::chunk_023",
-              "parecer_15_2025::chunk_007",
-              "parecer_18_2024::chunk_045",
+              "lei_14_133_2021::chunk_166",
               "parecer_1_2023::chunk_000",
               "parecer_1_2023::chunk_007",
               "parecer_1_2023::chunk_009",
-              "parecer_1_2023::chunk_037",
+              "parecer_1_2023::chunk_014",
+              "parecer_1_2023::chunk_019",
+              "parecer_1_2023::chunk_038",
               "parecer_1_2023::chunk_045",
-              "parecer_1_2023::chunk_058",
-              "parecer_21_2023::chunk_003"
+              "parecer_1_2023::chunk_049",
+              "parecer_1_2023::chunk_058"
             ]
           }
         },
@@ -1875,7 +1870,7 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_294",
+              "lei_14_133_2021::chunk_366",
               "parecer_1_2023::chunk_009",
               "parecer_1_2023::chunk_045"
             ]
@@ -1886,9 +1881,9 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_366",
-              "parecer_12_2024::chunk_003",
               "parecer_1_2023::chunk_009",
-              "parecer_1_2023::chunk_034",
+              "parecer_1_2023::chunk_019",
+              "parecer_1_2023::chunk_023",
               "parecer_1_2023::chunk_045"
             ]
           },
@@ -1897,16 +1892,16 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "lei_14_133_2021::chunk_166",
               "lei_14_133_2021::chunk_366",
-              "parecer_12_2024::chunk_019",
-              "parecer_12_2024::chunk_023",
+              "parecer_1_2023::chunk_008",
               "parecer_1_2023::chunk_009",
               "parecer_1_2023::chunk_019",
               "parecer_1_2023::chunk_022",
               "parecer_1_2023::chunk_023",
-              "parecer_1_2023::chunk_034",
               "parecer_1_2023::chunk_045",
-              "parecer_1_2023::chunk_059"
+              "parecer_1_2023::chunk_047",
+              "parecer_1_2023::chunk_058"
             ]
           }
         }
@@ -1927,9 +1922,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
               "lei_14_133_2021::chunk_214",
-              "lei_14_133_2021::chunk_215"
+              "lei_14_133_2021::chunk_215",
+              "nota_juridica_3_2024::chunk_002"
             ]
           },
           "5": {
@@ -1937,10 +1932,10 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
+              "lei_14_133_2021::chunk_211",
               "lei_14_133_2021::chunk_214",
               "lei_14_133_2021::chunk_215",
-              "lei_14_133_2021::chunk_341",
+              "nota_juridica_1_2024::chunk_019",
               "nota_juridica_3_2024::chunk_002"
             ]
           },
@@ -1949,16 +1944,16 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
               "lei_14_133_2021::chunk_029",
               "lei_14_133_2021::chunk_211",
               "lei_14_133_2021::chunk_214",
               "lei_14_133_2021::chunk_215",
-              "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_294",
+              "lei_14_133_2021::chunk_226",
+              "lei_14_133_2021::chunk_336",
+              "lei_14_133_2021::chunk_363",
               "nota_juridica_1_2024::chunk_019",
-              "nota_juridica_3_2024::chunk_002"
+              "nota_juridica_3_2024::chunk_002",
+              "parecer_20_2023::chunk_029"
             ]
           }
         },
@@ -1968,9 +1963,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "nota_juridica_1_2024::chunk_024",
               "nota_juridica_1_2024::chunk_037",
-              "nota_juridica_1_2024::chunk_048"
+              "nota_juridica_1_2024::chunk_048",
+              "nota_juridica_3_2024::chunk_006"
             ]
           },
           "5": {
@@ -1980,26 +1975,28 @@
             "retrieved": [
               "nota_juridica_1_2024::chunk_037",
               "nota_juridica_1_2024::chunk_048",
-              "nota_juridica_1_2024::chunk_091",
               "nota_juridica_3_2024::chunk_006",
-              "parecer_15_2025::chunk_025"
+              "nota_juridica_3_2024::chunk_013",
+              "parecer_20_2023::chunk_038"
             ]
           },
           "10": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 0.3333333333333333,
+            "hit": true,
+            "matched_relevant": [
+              "nota_juridica_1_2024::chunk_009"
+            ],
             "retrieved": [
+              "nota_juridica_1_2024::chunk_009",
+              "nota_juridica_1_2024::chunk_018",
+              "nota_juridica_1_2024::chunk_035",
               "nota_juridica_1_2024::chunk_037",
               "nota_juridica_1_2024::chunk_043",
               "nota_juridica_1_2024::chunk_048",
+              "nota_juridica_1_2024::chunk_075",
               "nota_juridica_3_2024::chunk_006",
-              "nota_juridica_3_2024::chunk_011",
               "nota_juridica_3_2024::chunk_013",
-              "parecer_20_2023::chunk_038",
-              "parecer_20_2023::chunk_039",
-              "parecer_20_2023::chunk_057",
-              "parecer_20_2023::chunk_062"
+              "parecer_20_2023::chunk_038"
             ]
           }
         },
@@ -2011,8 +2008,8 @@
               "nota_juridica_1_2024::chunk_009"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_293",
               "nota_juridica_1_2024::chunk_009",
+              "nota_juridica_1_2024::chunk_027",
               "nota_juridica_1_2024::chunk_048"
             ]
           },
@@ -2023,11 +2020,11 @@
               "nota_juridica_1_2024::chunk_009"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_293",
               "nota_juridica_1_2024::chunk_009",
+              "nota_juridica_1_2024::chunk_019",
               "nota_juridica_1_2024::chunk_027",
               "nota_juridica_1_2024::chunk_048",
-              "parecer_21_2023::chunk_004"
+              "nota_juridica_3_2024::chunk_011"
             ]
           },
           "10": {
@@ -2037,16 +2034,16 @@
               "nota_juridica_1_2024::chunk_009"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_150",
               "nota_juridica_1_2024::chunk_009",
               "nota_juridica_1_2024::chunk_019",
-              "nota_juridica_1_2024::chunk_023",
+              "nota_juridica_1_2024::chunk_020",
+              "nota_juridica_1_2024::chunk_022",
               "nota_juridica_1_2024::chunk_027",
+              "nota_juridica_1_2024::chunk_046",
               "nota_juridica_1_2024::chunk_048",
               "nota_juridica_1_2024::chunk_098",
               "nota_juridica_3_2024::chunk_010",
-              "nota_juridica_3_2024::chunk_011",
-              "parecer_15_2025::chunk_025"
+              "nota_juridica_3_2024::chunk_011"
             ]
           }
         }
@@ -2069,7 +2066,7 @@
               "nota_juridica_3_2024::chunk_002"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_294",
+              "lei_14_133_2021::chunk_214",
               "nota_juridica_1_2024::chunk_019",
               "nota_juridica_3_2024::chunk_002"
             ]
@@ -2082,9 +2079,9 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_214",
-              "lei_14_133_2021::chunk_341",
-              "lei_14_133_2021::chunk_366",
+              "nota_juridica_1_2024::chunk_003",
               "nota_juridica_1_2024::chunk_019",
+              "nota_juridica_1_2024::chunk_025",
               "nota_juridica_3_2024::chunk_002"
             ]
           },
@@ -2095,16 +2092,16 @@
               "nota_juridica_3_2024::chunk_002"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_029",
+              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_214",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_341",
-              "lei_14_133_2021::chunk_367",
               "nota_juridica_1_2024::chunk_003",
               "nota_juridica_1_2024::chunk_019",
               "nota_juridica_1_2024::chunk_025",
-              "nota_juridica_3_2024::chunk_002"
+              "nota_juridica_1_2024::chunk_048",
+              "nota_juridica_3_2024::chunk_002",
+              "nota_juridica_3_2024::chunk_008",
+              "parecer_20_2023::chunk_029"
             ]
           }
         },
@@ -2116,7 +2113,7 @@
             "retrieved": [
               "nota_juridica_1_2024::chunk_025",
               "nota_juridica_1_2024::chunk_048",
-              "parecer_20_2023::chunk_039"
+              "nota_juridica_3_2024::chunk_013"
             ]
           },
           "5": {
@@ -2124,40 +2121,44 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "nota_juridica_1_2024::chunk_020",
               "nota_juridica_1_2024::chunk_025",
-              "nota_juridica_1_2024::chunk_048",
-              "nota_juridica_3_2024::chunk_009",
-              "nota_juridica_3_2024::chunk_011"
-            ]
-          },
-          "10": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
-            "retrieved": [
-              "nota_juridica_1_2024::chunk_025",
-              "nota_juridica_1_2024::chunk_030",
               "nota_juridica_1_2024::chunk_048",
               "nota_juridica_3_2024::chunk_011",
               "nota_juridica_3_2024::chunk_013",
+              "nota_juridica_3_2024::chunk_021"
+            ]
+          },
+          "10": {
+            "recall": 0.3333333333333333,
+            "hit": true,
+            "matched_relevant": [
+              "nota_juridica_3_2024::chunk_001"
+            ],
+            "retrieved": [
+              "nota_juridica_1_2024::chunk_018",
+              "nota_juridica_1_2024::chunk_023",
+              "nota_juridica_1_2024::chunk_025",
+              "nota_juridica_1_2024::chunk_048",
+              "nota_juridica_3_2024::chunk_001",
+              "nota_juridica_3_2024::chunk_007",
+              "nota_juridica_3_2024::chunk_011",
+              "nota_juridica_3_2024::chunk_013",
               "nota_juridica_3_2024::chunk_021",
-              "parecer_15_2025::chunk_003",
-              "parecer_20_2023::chunk_039",
-              "parecer_20_2023::chunk_057",
-              "parecer_20_2023::chunk_062"
+              "nota_juridica_3_2024::chunk_023"
             ]
           }
         },
         "hybrid": {
           "3": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 0.3333333333333333,
+            "hit": true,
+            "matched_relevant": [
+              "nota_juridica_3_2024::chunk_002"
+            ],
             "retrieved": [
-              "lei_14_133_2021::chunk_273",
               "nota_juridica_1_2024::chunk_025",
-              "nota_juridica_1_2024::chunk_048"
+              "nota_juridica_1_2024::chunk_048",
+              "nota_juridica_3_2024::chunk_002"
             ]
           },
           "5": {
@@ -2167,30 +2168,31 @@
               "nota_juridica_3_2024::chunk_002"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_240",
-              "lei_14_133_2021::chunk_341",
+              "nota_juridica_1_2024::chunk_019",
               "nota_juridica_1_2024::chunk_025",
               "nota_juridica_1_2024::chunk_048",
-              "nota_juridica_3_2024::chunk_002"
+              "nota_juridica_3_2024::chunk_002",
+              "nota_juridica_3_2024::chunk_011"
             ]
           },
           "10": {
-            "recall": 0.3333333333333333,
+            "recall": 0.6666666666666666,
             "hit": true,
             "matched_relevant": [
+              "nota_juridica_3_2024::chunk_001",
               "nota_juridica_3_2024::chunk_002"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
-              "lei_14_133_2021::chunk_293",
+              "nota_juridica_1_2024::chunk_002",
+              "nota_juridica_1_2024::chunk_003",
               "nota_juridica_1_2024::chunk_019",
+              "nota_juridica_1_2024::chunk_022",
               "nota_juridica_1_2024::chunk_025",
-              "nota_juridica_1_2024::chunk_028",
               "nota_juridica_1_2024::chunk_048",
+              "nota_juridica_3_2024::chunk_001",
               "nota_juridica_3_2024::chunk_002",
-              "nota_juridica_3_2024::chunk_011",
-              "parecer_15_2025::chunk_003",
-              "parecer_20_2023::chunk_050"
+              "nota_juridica_3_2024::chunk_008",
+              "nota_juridica_3_2024::chunk_011"
             ]
           }
         }
@@ -2211,9 +2213,9 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_366",
-              "lei_14_133_2021::chunk_367"
+              "lei_14_133_2021::chunk_367",
+              "parecer_21_2023::chunk_001"
             ]
           },
           "5": {
@@ -2221,10 +2223,10 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_048",
+              "lei_14_133_2021::chunk_171",
               "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
-              "parecer_13_2025::chunk_045",
+              "parecer_15_2025::chunk_001",
               "parecer_21_2023::chunk_001"
             ]
           },
@@ -2233,16 +2235,16 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_171",
               "lei_14_133_2021::chunk_189",
               "lei_14_133_2021::chunk_341",
               "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
-              "parecer_13_2025::chunk_045",
+              "lei_14_133_2021::chunk_368",
               "parecer_15_2025::chunk_001",
-              "parecer_21_2023::chunk_001"
+              "parecer_21_2023::chunk_001",
+              "parecer_27_2025::chunk_000"
             ]
           }
         },
@@ -2253,8 +2255,8 @@
             "matched_relevant": [],
             "retrieved": [
               "parecer_12_2024::chunk_026",
-              "parecer_18_2024::chunk_048",
-              "parecer_8_2024::chunk_023"
+              "parecer_15_2025::chunk_001",
+              "parecer_18_2024::chunk_048"
             ]
           },
           "5": {
@@ -2264,9 +2266,9 @@
             "retrieved": [
               "parecer_12_2024::chunk_026",
               "parecer_15_2025::chunk_001",
-              "parecer_18_2024::chunk_002",
               "parecer_18_2024::chunk_048",
-              "parecer_8_2024::chunk_002"
+              "parecer_8_2024::chunk_023",
+              "parecer_8_2025::chunk_015"
             ]
           },
           "10": {
@@ -2274,16 +2276,16 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_005",
               "parecer_12_2024::chunk_026",
-              "parecer_14_2025::chunk_008",
-              "parecer_15_2024::chunk_009",
               "parecer_15_2025::chunk_001",
               "parecer_15_2025::chunk_002",
               "parecer_18_2024::chunk_048",
+              "parecer_20_2023::chunk_058",
+              "parecer_24_2023::chunk_034",
               "parecer_25_2023::chunk_002",
-              "parecer_27_2025::chunk_050",
-              "parecer_8_2024::chunk_023"
+              "parecer_27_2025::chunk_068",
+              "parecer_8_2024::chunk_023",
+              "parecer_8_2025::chunk_015"
             ]
           }
         },
@@ -2295,9 +2297,9 @@
               "parecer_14_2025::chunk_000"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_293",
               "parecer_14_2025::chunk_000",
-              "parecer_15_2025::chunk_001"
+              "parecer_15_2025::chunk_001",
+              "parecer_20_2023::chunk_057"
             ]
           },
           "5": {
@@ -2308,9 +2310,9 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_367",
+              "parecer_12_2024::chunk_026",
               "parecer_14_2025::chunk_000",
               "parecer_15_2025::chunk_001",
-              "parecer_15_2025::chunk_025",
               "parecer_20_2023::chunk_057"
             ]
           },
@@ -2321,16 +2323,16 @@
               "parecer_14_2025::chunk_000"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_048",
-              "lei_14_133_2021::chunk_293",
+              "lei_14_133_2021::chunk_366",
+              "lei_14_133_2021::chunk_367",
+              "parecer_12_2024::chunk_026",
               "parecer_13_2025::chunk_000",
-              "parecer_13_2025::chunk_045",
               "parecer_14_2025::chunk_000",
-              "parecer_14_2025::chunk_008",
+              "parecer_15_2025::chunk_000",
               "parecer_15_2025::chunk_001",
+              "parecer_18_2024::chunk_048",
               "parecer_20_2023::chunk_057",
-              "parecer_27_2025::chunk_000",
-              "parecer_8_2024::chunk_023"
+              "parecer_27_2025::chunk_000"
             ]
           }
         }
@@ -2353,7 +2355,7 @@
               "parecer_15_2025::chunk_001"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_048",
+              "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
               "parecer_15_2025::chunk_001"
             ]
@@ -2365,9 +2367,9 @@
               "parecer_15_2025::chunk_001"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
               "lei_14_133_2021::chunk_048",
-              "lei_14_133_2021::chunk_293",
+              "lei_14_133_2021::chunk_171",
+              "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
               "parecer_15_2025::chunk_001"
             ]
@@ -2379,16 +2381,16 @@
               "parecer_15_2025::chunk_001"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
+              "lei_14_133_2021::chunk_029",
               "lei_14_133_2021::chunk_048",
               "lei_14_133_2021::chunk_171",
-              "lei_14_133_2021::chunk_240",
-              "lei_14_133_2021::chunk_293",
-              "lei_14_133_2021::chunk_294",
+              "lei_14_133_2021::chunk_189",
               "lei_14_133_2021::chunk_341",
               "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
-              "parecer_15_2025::chunk_001"
+              "parecer_14_2024::chunk_030",
+              "parecer_15_2025::chunk_001",
+              "parecer_21_2023::chunk_001"
             ]
           }
         },
@@ -2399,7 +2401,7 @@
             "matched_relevant": [],
             "retrieved": [
               "parecer_15_2024::chunk_028",
-              "parecer_8_2024::chunk_002",
+              "parecer_27_2025::chunk_034",
               "parecer_8_2025::chunk_021"
             ]
           },
@@ -2409,9 +2411,9 @@
             "matched_relevant": [],
             "retrieved": [
               "parecer_15_2024::chunk_028",
-              "parecer_15_2025::chunk_033",
+              "parecer_21_2024::chunk_022",
+              "parecer_27_2025::chunk_019",
               "parecer_27_2025::chunk_034",
-              "parecer_8_2024::chunk_023",
               "parecer_8_2025::chunk_021"
             ]
           },
@@ -2420,15 +2422,15 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
+              "parecer_13_2025::chunk_006",
+              "parecer_14_2025::chunk_003",
               "parecer_15_2024::chunk_028",
-              "parecer_15_2025::chunk_003",
-              "parecer_15_2025::chunk_033",
+              "parecer_17_2024::chunk_044",
+              "parecer_21_2024::chunk_004",
               "parecer_21_2024::chunk_022",
               "parecer_27_2025::chunk_019",
+              "parecer_27_2025::chunk_023",
               "parecer_27_2025::chunk_034",
-              "parecer_27_2025::chunk_060",
-              "parecer_8_2024::chunk_020",
-              "parecer_8_2024::chunk_023",
               "parecer_8_2025::chunk_021"
             ]
           }
@@ -2442,9 +2444,9 @@
               "parecer_15_2025::chunk_002"
             ],
             "retrieved": [
+              "lei_14_133_2021::chunk_367",
               "parecer_15_2025::chunk_001",
-              "parecer_15_2025::chunk_002",
-              "parecer_15_2025::chunk_025"
+              "parecer_15_2025::chunk_002"
             ]
           },
           "5": {
@@ -2456,10 +2458,10 @@
             ],
             "retrieved": [
               "lei_14_133_2021::chunk_367",
-              "parecer_15_2024::chunk_007",
+              "parecer_15_2024::chunk_028",
               "parecer_15_2025::chunk_001",
               "parecer_15_2025::chunk_002",
-              "parecer_21_2023::chunk_003"
+              "parecer_8_2025::chunk_021"
             ]
           },
           "10": {
@@ -2470,16 +2472,16 @@
               "parecer_15_2025::chunk_002"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_011",
-              "lei_14_133_2021::chunk_293",
               "lei_14_133_2021::chunk_366",
               "lei_14_133_2021::chunk_367",
+              "parecer_15_2024::chunk_028",
               "parecer_15_2025::chunk_001",
               "parecer_15_2025::chunk_002",
-              "parecer_15_2025::chunk_025",
-              "parecer_15_2025::chunk_033",
+              "parecer_15_2025::chunk_036",
               "parecer_15_2025::chunk_039",
-              "parecer_8_2025::chunk_016"
+              "parecer_27_2025::chunk_034",
+              "parecer_8_2025::chunk_016",
+              "parecer_8_2025::chunk_021"
             ]
           }
         }
@@ -2502,7 +2504,7 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_254",
+              "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_294"
             ]
@@ -2513,42 +2515,34 @@
             "matched_relevant": [],
             "retrieved": [
               "lei_14_133_2021::chunk_236",
-              "lei_14_133_2021::chunk_254",
+              "lei_14_133_2021::chunk_259",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_294"
             ]
           },
           "10": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 0.2,
+            "hit": true,
+            "matched_relevant": [
+              "lei_14_133_2021::chunk_266"
+            ],
             "retrieved": [
+              "lei_14_133_2021::chunk_033",
               "lei_14_133_2021::chunk_236",
-              "lei_14_133_2021::chunk_254",
               "lei_14_133_2021::chunk_259",
+              "lei_14_133_2021::chunk_266",
               "lei_14_133_2021::chunk_268",
+              "lei_14_133_2021::chunk_271",
               "lei_14_133_2021::chunk_273",
-              "lei_14_133_2021::chunk_293",
+              "lei_14_133_2021::chunk_278",
               "lei_14_133_2021::chunk_294",
-              "lei_14_133_2021::chunk_304",
-              "lei_14_133_2021::chunk_345",
-              "parecer_13_2025::chunk_001"
+              "lei_14_133_2021::chunk_345"
             ]
           }
         },
         "sparse": {
           "3": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
-            "retrieved": [
-              "parecer_10_2025::chunk_008",
-              "parecer_10_2025::chunk_014",
-              "parecer_10_2025::chunk_017"
-            ]
-          },
-          "5": {
             "recall": 0.2,
             "hit": true,
             "matched_relevant": [
@@ -2556,8 +2550,21 @@
             ],
             "retrieved": [
               "parecer_10_2025::chunk_002",
-              "parecer_10_2025::chunk_008",
-              "parecer_10_2025::chunk_009",
+              "parecer_10_2025::chunk_014",
+              "parecer_10_2025::chunk_017"
+            ]
+          },
+          "5": {
+            "recall": 0.4,
+            "hit": true,
+            "matched_relevant": [
+              "parecer_10_2025::chunk_001",
+              "parecer_10_2025::chunk_002"
+            ],
+            "retrieved": [
+              "parecer_10_2025::chunk_001",
+              "parecer_10_2025::chunk_002",
+              "parecer_10_2025::chunk_013",
               "parecer_10_2025::chunk_014",
               "parecer_10_2025::chunk_017"
             ]
@@ -2570,16 +2577,16 @@
               "parecer_10_2025::chunk_002"
             ],
             "retrieved": [
-              "lei_14_133_2021::chunk_009",
-              "lei_14_133_2021::chunk_167",
-              "lei_14_133_2021::chunk_356",
               "parecer_10_2025::chunk_001",
               "parecer_10_2025::chunk_002",
+              "parecer_10_2025::chunk_009",
               "parecer_10_2025::chunk_013",
               "parecer_10_2025::chunk_014",
+              "parecer_10_2025::chunk_016",
               "parecer_10_2025::chunk_017",
-              "parecer_18_2024::chunk_034",
-              "parecer_1_2023::chunk_019"
+              "parecer_10_2025::chunk_020",
+              "parecer_10_2025::chunk_024",
+              "parecer_10_2025::chunk_025"
             ]
           }
         },
@@ -2589,7 +2596,7 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "nota_juridica_1_2024::chunk_017",
+              "lei_14_133_2021::chunk_273",
               "parecer_10_2025::chunk_011",
               "parecer_10_2025::chunk_013"
             ]
@@ -2599,28 +2606,31 @@
             "hit": false,
             "matched_relevant": [],
             "retrieved": [
-              "lei_14_133_2021::chunk_009",
-              "lei_14_133_2021::chunk_011",
               "lei_14_133_2021::chunk_268",
+              "lei_14_133_2021::chunk_273",
               "parecer_10_2025::chunk_011",
-              "parecer_10_2025::chunk_013"
+              "parecer_10_2025::chunk_013",
+              "parecer_10_2025::chunk_014"
             ]
           },
           "10": {
-            "recall": 0.0,
-            "hit": false,
-            "matched_relevant": [],
+            "recall": 0.4,
+            "hit": true,
+            "matched_relevant": [
+              "parecer_10_2025::chunk_001",
+              "parecer_10_2025::chunk_002"
+            ],
             "retrieved": [
-              "lei_14_133_2021::chunk_002",
+              "lei_14_133_2021::chunk_236",
               "lei_14_133_2021::chunk_268",
               "lei_14_133_2021::chunk_273",
               "lei_14_133_2021::chunk_294",
-              "parecer_10_2025::chunk_009",
+              "parecer_10_2025::chunk_001",
+              "parecer_10_2025::chunk_002",
               "parecer_10_2025::chunk_011",
               "parecer_10_2025::chunk_013",
               "parecer_10_2025::chunk_014",
-              "parecer_13_2025::chunk_001",
-              "parecer_24_2023::chunk_001"
+              "parecer_10_2025::chunk_017"
             ]
           }
         }

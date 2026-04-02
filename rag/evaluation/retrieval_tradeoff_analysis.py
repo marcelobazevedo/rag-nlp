@@ -156,7 +156,6 @@ def analyze(dataset_path: Path) -> Dict[str, Any]:
         "evaluation_policy": {
             "use_query_expansion": False,
             "use_named_doc": False,
-            "reason": "comparar dense/sparse/hybrid como retrievers puros, sem deixar query expansion ou named_doc mascararem os resultados experimentais",
         },
         "ks": KS,
         "modes": MODES,
@@ -172,7 +171,6 @@ def _build_markdown(report: Dict[str, Any]) -> str:
     lines.append("")
     lines.append(f"- Itens avaliados para retrieval: {report['answerable_items']}")
     lines.append(f"- Itens de recusa excluidos: {report['refuse_items_excluded']}")
-    lines.append("- Politica de avaliacao: desativa query expansion e named_doc para medir dense, sparse e hybrid como retrievers puros e comparaveis.")
     lines.append("")
     lines.append("## Recall medio por modo")
     lines.append("")
