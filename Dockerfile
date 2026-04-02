@@ -25,6 +25,7 @@ COPY rag ./rag
 COPY app.py ./
 COPY .streamlit ./.streamlit
 COPY static ./static
+COPY data ./data
 COPY documentos ./documentos
 COPY initdb ./initdb
 
