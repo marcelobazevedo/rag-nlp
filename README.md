@@ -195,6 +195,26 @@ Arquivos gerados:
 - [retrieval_tradeoff_analysis.json](/home/marcelo/Development/rag-nlp/data/retrieval_tradeoff_analysis.json)
 - [retrieval_tradeoffs.md](/home/marcelo/Development/rag-nlp/data/retrieval_tradeoffs.md)
 
+#### Resultados atuais
+
+Bloco opcional para apresentação. Se não ficar bom no contexto da entrega, pode ser removido sem afetar o restante do README.
+
+No dataset atual de retrieval, com 18 perguntas avaliadas e 2 de recusa excluídas, os recalls médios foram:
+
+| modo | Recall@3 | Recall@5 | Recall@10 |
+| --- | ---: | ---: | ---: |
+| `dense` | 0.1296 | 0.1481 | 0.2241 |
+| `sparse` | 0.0759 | 0.1565 | 0.2630 |
+| `hybrid` | 0.2176 | 0.2685 | 0.4574 |
+
+Leitura curta:
+
+- o modo `hybrid` apresentou o melhor resultado médio em todos os cortes de `k`
+- em `k=10`, o ganho do `hybrid` foi mais visível, chegando a `0.4574`
+- isso reforça a escolha de combinar recuperação vetorial e lexical no corpus jurídico deste projeto
+
+Esses números vêm dos artefatos versionados em [retrieval_tradeoff_analysis.json](/home/marcelo/Development/rag-nlp/data/retrieval_tradeoff_analysis.json) e [retrieval_tradeoffs.md](/home/marcelo/Development/rag-nlp/data/retrieval_tradeoffs.md).
+
 #### Rubrica qualitativa
 
 ```bash
