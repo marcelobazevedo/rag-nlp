@@ -1,27 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "rag-nlp"
 version = "0.1.0"
-description = "Add your description here"
+description = "Aplicação RAG para consulta jurídica sobre a Lei 14.133/2021."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "langchain==0.3.27",
-    "langchain-community>=0.3.31",
+    "langchain-core>=0.3.72",
     "langchain-ollama>=0.3.10",
     "langchain-openai>=0.3.35",
     "langgraph>=0.6.10",
-    "lark>=1.3.0",
-    "llama-index>=0.13.6",
-    "llama-index-llms-openai>=0.5.4",
-    "openai>=1.106.1",
-    "pypdf>=6.7.3",
-    "psycopg2>=2.9.11",
-    "psycopg2-binary>=2.9.9",
-    "python-dotenv>=1.1.1",
-    "rank-bm25>=0.2.2",
-    "streamlit>=1.50.0",
-    "tiktoken>=0.11.0",
     "nltk>=3.9.3",
     "numpy>=2.0.0",
+    "openai>=1.106.1",
+    "psycopg2-binary>=2.9.9",
+    "pypdf>=6.7.3",
+    "python-dotenv>=1.1.1",
+    "rank-bm25>=0.2.2",
     "requests>=2.32.0",
+    "streamlit>=1.50.0",
 ]
+
+[tool.setuptools]
+packages = ["rag"]

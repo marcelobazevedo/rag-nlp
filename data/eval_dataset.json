@@ -112,6 +112,42 @@
         "nota_juridica_3_2024::chunk_001",
         "nota_juridica_3_2024::chunk_002"
       ]
+    },
+    {
+      "question": "Qual é o conteúdo e as conclusões centrais do Parecer 14/2025?",
+      "relevant": [
+        "parecer_14_2025::chunk_000",
+        "parecer_14_2025::chunk_001",
+        "parecer_14_2025::chunk_002"
+      ]
+    },
+    {
+      "question": "Qual é o tema analisado e a conclusão principal do Parecer 15/2025?",
+      "relevant": [
+        "parecer_15_2025::chunk_000",
+        "parecer_15_2025::chunk_001",
+        "parecer_15_2025::chunk_002"
+      ]
+    },
+    {
+      "question": "Como a Lei 14.133/2021 e o Parecer 10/2025 tratam da fiscalização contratual e da designação de gestores e fiscais de contratos?",
+      "relevant": [
+        "lei_14_133_2021::chunk_265",
+        "lei_14_133_2021::chunk_266",
+        "parecer_10_2025::chunk_001",
+        "parecer_10_2025::chunk_002",
+        "parecer_10_2025::chunk_003"
+      ]
+    },
+    {
+      "question": "O que a Lei 8.666/1993 estabelece sobre as modalidades de licitação?",
+      "relevant": [],
+      "expected_behavior": "refuse"
+    },
+    {
+      "question": "Quais são as regras do Marco Civil da Internet para guarda de logs por provedores de aplicação?",
+      "relevant": [],
+      "expected_behavior": "refuse"
     }
   ]
 }

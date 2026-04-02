@@ -15,6 +15,11 @@
           "chunk_id": "chunk_000"
         }
       ]
+    },
+    {
+      "question": "O que a Lei 8.666/1993 estabelece sobre convite e tomada de precos?",
+      "relevant": [],
+      "expected_behavior": "refuse"
     }
   ]
 }

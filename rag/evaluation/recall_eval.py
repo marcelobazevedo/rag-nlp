@@ -4,7 +4,7 @@ from pathlib import Path
 from statistics import mean
 from typing import Dict, List, Set
 
-from rag.retrieval.retriever import HybridRetriever
+from rag.retrieval.retrieval_node import retrieve_docs
 
 
 def _to_id_set(raw_relevant: List) -> Set[str]:
@@ -51,29 +51,45 @@ def evaluate(dataset_path: Path):
     if not items:
         raise ValueError("Dataset sem itens para avaliação.")
 
-    retriever = HybridRetriever()
     modes = ["dense", "sparse", "hybrid"]
     ks = [3, 5, 10]
 
     metrics: Dict[str, Dict[int, List[float]]] = {
         mode: {k: [] for k in ks} for mode in modes
     }
+    answerable_items = 0
+    refuse_items = 0
 
     for row in items:
         question = row.get("question", "").strip()
         if not question:
             continue
+        expected_behavior = (row.get("expected_behavior") or "").strip().lower()
+        if expected_behavior == "refuse":
+            refuse_items += 1
+            continue
+
         relevant = _to_id_set(row.get("relevant", []))
+        if not relevant:
+            continue
+        answerable_items += 1
 
         for mode in modes:
             for k in ks:
-                results = retriever.get_mode(mode, question, k=k)
+                results = retrieve_docs(
+                    question=question,
+                    mode=mode,
+                    top_k=k,
+                    use_named_doc=False,
+                    use_query_expansion=False,
+                )["docs"]
                 retrieved = _from_results(results)
                 metrics[mode][k].append(recall_at_k(relevant, retrieved))
 
-    retriever.close()
-
     print("\nRecall@k médio por modo")
+    print(f"Itens avaliados para recall: {answerable_items}")
+    print(f"Itens marcados para recusa e excluidos do recall: {refuse_items}")
+    print("Avaliacao mede os modos de retrieval sem query expansion e com named_doc desativado para manter comparacao experimental entre dense/sparse/hybrid.")
     print("mode\tk=3\tk=5\tk=10")
     for mode in modes:
         values = [mean(metrics[mode][k]) if metrics[mode][k] else 0.0 for k in ks]

@@ -63,11 +63,15 @@ def embedding_model_name() -> str:
     return _required_env("OPENAI_EMBEDDING_MODEL")
 
 
+def ollama_base_url() -> str:
+    return os.getenv("OLLAMA_URL", "http://localhost:11434")
+
+
 def build_chat_model(temperature: float = 0.0):
     _validate_mode_env()
     model = llm_model_name()
     if is_local_model_enabled():
-        return ChatOllama(model=model, temperature=temperature)
+        return ChatOllama(model=model, temperature=temperature, base_url=ollama_base_url())
     return ChatOpenAI(model=model, temperature=temperature)
 
 
@@ -75,7 +79,7 @@ def generate_text(prompt: str, timeout: int = 15, max_tokens: int = 100) -> str:
     """Gera texto curto para tarefas internas, respeitando MODELO_LOCAL."""
     _validate_mode_env()
     if is_local_model_enabled():
-        ollama_url = os.getenv("OLLAMA_URL", "http://localhost:11434")
+        ollama_url = ollama_base_url()
         response = requests.post(
             f"{ollama_url}/api/generate",
             json={
@@ -102,7 +106,7 @@ def generate_text(prompt: str, timeout: int = 15, max_tokens: int = 100) -> str:
 def embed_text(text: str) -> list[float]:
     _validate_mode_env()
     if is_local_model_enabled():
-        ollama_url = os.getenv("OLLAMA_URL", "http://localhost:11434")
+        ollama_url = ollama_base_url()
         response = requests.post(
             f"{ollama_url}/api/embeddings",
             json={"model": embedding_model_name(), "prompt": text},

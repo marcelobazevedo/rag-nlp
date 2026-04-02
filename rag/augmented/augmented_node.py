@@ -1,14 +1,16 @@
 from typing import Dict
-from rag.graph.utils import _format_docs
-from rag.graph.model_provider import build_chat_model
+
 from langchain_core.runnables import RunnableConfig
+
+from rag.graph.model_provider import build_chat_model
+from rag.graph.utils import _format_docs
+
 
 def generate_stream(state, config: RunnableConfig) -> Dict:
     """Nó que gera a resposta final em formato de stream."""
     print("Executando o nó de geração...")
     docs = state.get("docs", [])
     if not docs:
-        # Sem qualquer evidência recuperada, mantém fallback estrito.
         return {"answer": iter(["não encontrei na base"])}
 
     context = _format_docs(docs)
@@ -30,10 +32,11 @@ Pergunta: {state['question']}
 CONTEXTO:
 {context}
 """
-    def stream_ollama(prompt):
+
+    def stream_answer(input_prompt: str):
         llm = build_chat_model(temperature=0)
-        # O método stream retorna um gerador de chunks
-        for chunk in llm.stream(prompt):
+        for chunk in llm.stream(input_prompt):
             yield chunk.content
-    answer_stream = stream_ollama(prompt)
+
+    answer_stream = stream_answer(prompt)
     return {"answer": answer_stream}

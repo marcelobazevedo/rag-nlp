@@ -1,213 +1,201 @@
 # rag-nlp
 
-Chatbot RAG com Streamlit para consulta jurídica da Lei 14.133/2021, pareceres e notas jurídicas.
+Aplicação RAG em Streamlit para consulta jurídica sobre a Lei 14.133/2021, pareceres e notas jurídicas. O projeto faz ingestão de PDFs, indexação em PostgreSQL com pgvector, recuperação `dense`, `sparse` e `hybrid`, e geração de respostas com citações por chunk.
 
-Suporta recuperação **dense** (pgvector), **sparse** (BM25) e **hybrid** (Reciprocal Rank Fusion), com query expansion automática, citações obrigatórias por chunk e recusa quando não há evidência suficiente.
+## Visão geral
 
----
+Fluxo principal:
 
-## Arquitetura
-
-```
-documentos/ (PDFs)
-      │
-      ▼
-extract_text.py  →  pgvector_store.py  →  PostgreSQL + pgvector
-                                                │
-                        ┌───────────────────────┘
-                        ▼
-              retrieval_node.py  (query expansion + HybridRetriever)
-                        │
-                        ▼
-              augmented_node.py  (geração com grounding)
-                        │
-                        ▼
-                    app.py (Streamlit)
+```text
+PDFs em documentos/
+  -> ingestão e chunking
+  -> embeddings + armazenamento em PostgreSQL/pgvector
+  -> recuperação de trechos relevantes
+  -> resposta no app com citações
 ```
 
-O fluxo de inferência é orquestrado pelo **LangGraph** (`rag_graph.py`). O provider de modelo (`model_provider.py`) é o único ponto de decisão entre modo local (Ollama) e OpenAI, lendo tudo do `.env`.
+Arquivos centrais:
 
----
+- [app.py](/home/marcelo/Development/rag-nlp/app.py): interface Streamlit
+- [rag_graph.py](/home/marcelo/Development/rag-nlp/rag/graph/rag_graph.py): orquestração do fluxo RAG
+- [extract_text.py](/home/marcelo/Development/rag-nlp/rag/ingest/extract_text.py): ingestão, metadados e chunking
+- [retrieval_node.py](/home/marcelo/Development/rag-nlp/rag/retrieval/retrieval_node.py): recuperação e seleção do modo de busca
+- [augmented_node.py](/home/marcelo/Development/rag-nlp/rag/augmented/augmented_node.py): geração da resposta final
 
 ## Pré-requisitos
 
-- [uv](https://docs.astral.sh/uv/) — gerenciador de pacotes e ambiente Python
-- [Docker](https://docs.docker.com/) — para subir o Postgres com pgvector
-- **Modo local:** [Ollama](https://ollama.com/) instalado e rodando, com os modelos baixados
-- **Modo OpenAI:** chave de API válida (`OPENAI_API_KEY`)
-
----
+- Docker e Docker Compose
+- `uv`
+- Ollama rodando no host se `MODELO_LOCAL=true`
+- chave válida da OpenAI se `MODELO_LOCAL=false`
 
 ## Configuração
 
-### 1. Instalar dependências
-
-```bash
-uv sync
-```
-
-### 2. Criar o arquivo `.env`
+Crie o arquivo `.env`:
 
 ```bash
 cp .env_sample .env
 ```
 
-Edite o `.env` conforme o modo desejado:
+Variáveis principais:
+
+- `MODELO_LOCAL=true` usa Ollama para LLM e embeddings
+- `MODELO_LOCAL=false` usa OpenAI
+- `PGVECTOR_DIM` precisa ser compatível com a dimensão do embedding escolhido
+- `CHUNK_SIZE` e `CHUNK_OVERLAP` são lidos do `.env` e controlam a segmentação dos documentos
+
+Exemplo:
 
 ```dotenv
-# ── Modo de operação ─────────────────────────────────────
-# true  → usa Ollama (modelos locais)
-# false → usa OpenAI (requer OPENAI_API_KEY)
-MODELO_LOCAL=false
+MODELO_LOCAL=true
 
-# ── Modelos locais (Ollama) ── usados quando MODELO_LOCAL=true
 LLM_MODEL=ministral-3:14b
 EMBEDDING_MODEL=nomic-embed-text:latest
+OLLAMA_URL=http://host.docker.internal:11434
 
-# ── Modelos OpenAI ── usados quando MODELO_LOCAL=false
-OPENAI_API_KEY=sk-proj-...
+OPENAI_API_KEY=
 OPENAI_MODEL=gpt-4.1-mini
 OPENAI_EMBEDDING_MODEL=text-embedding-3-large
 
-# ── Banco de dados ───────────────────────────────────────
-PGVECTOR_DIM=768     # deve ser igual à dimensão do modelo de embedding
+PGVECTOR_DIM=768
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_USER=rag
 POSTGRES_PASSWORD=senha_forte_123
 POSTGRES_DB=rag_db
 
-# ── Chunking ─────────────────────────────────────────────
+STREAMLIT_BIND_ADDRESS=0.0.0.0
 CHUNK_SIZE=900
 CHUNK_OVERLAP=120
 ```
 
-> **Importante sobre `PGVECTOR_DIM`:** a dimensão deve coincidir com o modelo de embedding escolhido.
-> - `nomic-embed-text:latest` → `768`
-> - `text-embedding-3-large` (OpenAI) → truncado para `768` automaticamente via parâmetro `dimensions`
->
-> Se trocar de modelo, truncate a tabela antes de reingerir (ver seção abaixo).
-
-### 3. Subir o banco de dados
+## Subir os serviços
 
 ```bash
-docker compose up -d
+docker compose up -d --build
+docker compose ps
 ```
 
-O script `initdb/01-pgvector.sql` é executado automaticamente na primeira inicialização e instala a extensão `vector`. A tabela `dados` é criada pelo próprio script de ingestão.
+Endpoints locais:
 
----
+- Streamlit em `http://127.0.0.1:8501`
+- PostgreSQL em `127.0.0.1:5432`
 
-## Ingestão de documentos
+## Instalar dependências locais
 
-1. Coloque os arquivos PDF na pasta `documentos/`.
-2. Execute a ingestão:
+```bash
+uv sync
+```
+
+Esse passo instala as dependências Python do projeto. Na primeira execução local, o código também tenta garantir automaticamente os recursos `stopwords` e `rslp` do NLTK, usados no tokenizer do modo `sparse`.
+
+Para preparar o ambiente local completo, ainda é necessário:
+
+- configurar o arquivo `.env`
+- ter PostgreSQL com `pgvector`
+- ter Ollama ativo ou uma chave válida da OpenAI
+
+Se quiser baixar os recursos do NLTK manualmente antes da primeira execução:
+
+```bash
+uv run python -m nltk.downloader stopwords rslp
+```
+
+## Ingerir o corpus
+
+Coloque os PDFs em [documentos/](/home/marcelo/Development/rag-nlp/documentos) e execute:
 
 ```bash
 uv run python -m rag.ingest.extract_text
 ```
 
-O script:
-- Lê cada PDF com `pypdf`
-- Infere metadados por regras (nome do arquivo + regex): `doc_id`, `titulo`, `fonte`, `data`, `tipo`
-- Faz chunking com quebra em fronteiras naturais (artigos, capítulos, seções) e overlap configurável
-- Gera embeddings via Ollama ou OpenAI (conforme `MODELO_LOCAL`)
-- Insere no PostgreSQL com `chunk_id UNIQUE` (re-execuções são idempotentes por `ON CONFLICT DO NOTHING`)
+Durante a ingestão, o projeto:
 
-### Trocar de modo (local ↔ OpenAI)
+- extrai texto com `pypdf`
+- infere metadados básicos por nome de arquivo e conteúdo
+- divide o texto em chunks
+- gera embeddings
+- grava os registros na tabela `dados`
 
-Embeddings gerados por modelos diferentes **não são intercambiáveis**. Ao trocar `MODELO_LOCAL`, truncate a tabela antes de reingerir:
+Metadados principais por chunk:
+
+- `doc_id`
+- `titulo`
+- `fonte`
+- `data`
+- `tipo`
+- `numero_documento`
+- `chunk_type`
+
+### Chunking
+
+Configuração definida no `.env`:
+
+- `CHUNK_SIZE=900`
+- `CHUNK_OVERLAP=120`
+
+O chunking tenta quebrar primeiro em fronteiras naturais como artigos, capítulos e seções. Quando isso não é possível, usa overlap para preservar contexto entre trechos consecutivos.
+
+## Limpar a base antes de reingerir
 
 ```bash
-docker exec -i postgres_pgvector_rag psql -U rag -d rag_db -c "TRUNCATE TABLE dados;"
-uv run python -m rag.ingest.extract_text
+uv run python -m rag.ingest.truncate_data
 ```
 
----
+Esse comando remove os registros da tabela `dados` e reinicia a sequência de IDs. Se você trocar o modelo de embedding ou alterar a dimensão do vetor, vale limpar a base antes de uma nova ingestão.
 
-## Executar o chatbot
+## Executar o aplicativo
+
+Com os containers ativos e a base ingerida:
 
 ```bash
 uv run streamlit run app.py
 ```
 
-Acesse em `http://localhost:8501`.
+No app, é possível escolher:
 
-No menu lateral é possível configurar:
-- **Modo de recuperação:** `dense` (vetorial), `sparse` (BM25) ou `hybrid` (RRF)
-- **Top-k:** número de chunks recuperados (3, 5 ou 10)
+- modo `dense`
+- modo `sparse`
+- modo `hybrid`
+- `top-k` da recuperação
 
-Cada resposta exibe, em um expander, a query expandida e os detalhes da busca. As respostas contêm citações obrigatórias no formato `[doc_id#chunk_id]`.
+## Avaliação
 
----
+O repositório inclui scripts para avaliação de recuperação e análise qualitativa, com dados de apoio na pasta [data/](/home/marcelo/Development/rag-nlp/data).
 
-## Avaliação de métricas (Recall@k)
-
-### 1. Preparar o dataset
-
-Crie `data/eval_dataset.json` com base no modelo `data/eval_dataset.sample.json`:
-
-```json
-{
-  "items": [
-    {
-      "question": "Qual o prazo para publicação do edital?",
-      "relevant": [
-        "lei_14133_2021::chunk_042",
-        "lei_14133_2021::chunk_043"
-      ]
-    }
-  ]
-}
-```
-
-Os `chunk_id`s devem estar no formato `doc_id::chunk_NNN`, conforme armazenado no banco.
-
-### 2. Executar a avaliação
+Exemplo de `Recall@k`:
 
 ```bash
 uv run python -m rag.evaluation.recall_eval --dataset data/eval_dataset.json
 ```
 
-Saída: tabela com **Recall@3**, **Recall@5** e **Recall@10** para os modos `dense`, `sparse` e `hybrid`:
+Também estão disponíveis:
 
-```
-Recall@k médio por modo
-mode    k=3     k=5     k=10
-dense   0.3111  0.4000  0.4889
-sparse  0.2444  0.3556  0.4444
-hybrid  0.2889  0.3778  0.4556
-```
-
----
+- [retrieval_tradeoff_analysis.py](/home/marcelo/Development/rag-nlp/rag/evaluation/retrieval_tradeoff_analysis.py)
+- [qualitative_eval.py](/home/marcelo/Development/rag-nlp/rag/evaluation/qualitative_eval.py)
 
 ## Estrutura do projeto
 
-```
-app.py                        # Interface Streamlit
-pyproject.toml                # Dependências (uv)
-docker-compose.yaml           # Postgres + pgvector
-.env_sample                   # Modelo de variáveis de ambiente
-documentos/                   # PDFs para ingestão
+```text
+app.py
+Dockerfile
+docker-compose.yaml
+.env_sample
+README.md
+
+documentos/
 data/
-  eval_dataset.json           # Dataset de avaliação
-  eval_dataset.sample.json    # Exemplo de formato
-initdb/
-  01-pgvector.sql             # Instala extensão vector
 rag/
-  graph/
-    model_provider.py         # Provider central: Ollama ↔ OpenAI
-    rag_graph.py              # Grafo LangGraph
-    utils.py                  # Utilitários
-  ingest/
-    extract_text.py           # Pipeline de ingestão de PDFs
-    pgvector_store.py         # Persistência no PostgreSQL
-  retrieval/
-    retriever.py              # HybridRetriever (dense + BM25 + RRF)
-    retrieval_node.py         # Nó de recuperação (query expansion)
   augmented/
-    augmented_node.py         # Nó de geração com grounding
   evaluation/
-    recall_eval.py            # Avaliação Recall@k
+  graph/
+  ingest/
+  retrieval/
 ```
 
+## Observações
+
+- a recuperação híbrida usa fusão RRF entre resultados densos e esparsos
+- a indexação usa `chunk_id` composto por documento e chunk para evitar colisões
+- se a configuração de ambiente estiver incompleta, o projeto falha cedo com mensagens explícitas
+- `uv sync` prepara o ambiente Python, mas a execução local ainda depende de banco, `.env` e provider de modelo

@@ -2,7 +2,7 @@ services:
   postgres:
     image: pgvector/pgvector:pg16
     container_name: postgres_pgvector_rag
-    restart: no
+    restart: unless-stopped
     environment:
       POSTGRES_USER: rag
       POSTGRES_PASSWORD: senha_forte_123
@@ -13,6 +13,31 @@ services:
       - postgres_data:/var/lib/postgresql/data
       # scripts .sql/.sh aqui será executado na 1ª inicialização do volume
       - ./initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rag -d rag_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag_nlp_streamlit
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      OLLAMA_URL: ${OLLAMA_URL:-http://host.docker.internal:11434}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "${STREAMLIT_BIND_ADDRESS:-0.0.0.0}:8501:8501"
 
 volumes:
   postgres_data:

@@ -3,16 +3,11 @@ import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import requests
-from dotenv import load_dotenv
 from pypdf import PdfReader
 
 from rag.graph.model_provider import embed_text
 from rag.ingest.pgvector_store import PgVectorStore
-
-load_dotenv()
-CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "900"))
-CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "120"))
+from rag.settings import CHUNK_OVERLAP, CHUNK_SIZE
 
 
 def _read_pdf_text(file_path: str) -> str:
@@ -92,7 +87,7 @@ def _infer_numero_documento(file_stem: str, text: str, tipo: str) -> str:
             return "14.133/2021"
         lei_text = re.search(r"lei\s*n?[oº°]?\s*(14\.?133(?:/2021)?)", text, flags=re.IGNORECASE)
         if lei_text:
-            value = lei_text.group(1).replace(".", ".")
+            value = lei_text.group(1)
             return "14.133/2021" if "2021" in value or value.startswith("14") else value
 
     number_match = re.search(r"(\d{1,4})[_.\-/](\d{2,4})", file_stem)
@@ -223,40 +218,41 @@ def process_pdf_file(file_path: str) -> List[Dict[str, Any]]:
 
 def main(collection: str = "documentos_licitacoes", pasta_pdfs: str = "documentos"):
     vector_store = PgVectorStore()
-    vector_store.create_table()
-    pdf_files = list(Path(pasta_pdfs).glob("*.pdf"))
-    if not pdf_files:
-        print("Nenhum PDF encontrado na pasta.")
-        return
+    try:
+        vector_store.create_table()
+        pdf_files = sorted(Path(pasta_pdfs).glob("*.pdf"))
+        if not pdf_files:
+            print("Nenhum PDF encontrado na pasta.")
+            return
 
-    total_chunks = 0
-    processed_files = 0
-    skipped_files = 0
-    for pdf_file in pdf_files:
-        chunks = process_pdf_file(str(pdf_file))
-        if not chunks:
-            skipped_files += 1
-            print(f"[ingest] Ignorado (0 chunks): {pdf_file.name}")
-            continue
+        total_chunks = 0
+        processed_files = 0
+        skipped_files = 0
+        for pdf_file in pdf_files:
+            chunks = process_pdf_file(str(pdf_file))
+            if not chunks:
+                skipped_files += 1
+                print(f"[ingest] Ignorado (0 chunks): {pdf_file.name}")
+                continue
 
-        texts = [c["text"] for c in chunks]
-        metadatas = [c["metadata"] for c in chunks]
-        embeddings = []
+            texts = [chunk["text"] for chunk in chunks]
+            metadatas = [chunk["metadata"] for chunk in chunks]
+            embeddings = []
 
-        for text in texts:
-            emb = embed_text(text)
-            embeddings.append(emb)
+            for text in texts:
+                embeddings.append(embed_text(text))
 
-        vector_store.add_texts(texts=texts, metadatas=metadatas, embeddings=embeddings)
-        total_chunks += len(chunks)
-        processed_files += 1
-        print(f"[ingest] OK {pdf_file.name}: {len(chunks)} chunks")
+            vector_store.add_texts(texts=texts, metadatas=metadatas, embeddings=embeddings)
+            total_chunks += len(chunks)
+            processed_files += 1
+            print(f"[ingest] OK {pdf_file.name}: {len(chunks)} chunks")
 
-    vector_store.close()
-    print(
-        f"✅ PDFs lidos: {len(pdf_files)} | Com chunks: {processed_files} | "
-        f"Sem chunks: {skipped_files} | Chunks inseridos: {total_chunks}"
-    )
+        print(
+            f"✅ PDFs lidos: {len(pdf_files)} | Com chunks: {processed_files} | "
+            f"Sem chunks: {skipped_files} | Chunks inseridos: {total_chunks}"
+        )
+    finally:
+        vector_store.close()
 
 
 if __name__ == "__main__":

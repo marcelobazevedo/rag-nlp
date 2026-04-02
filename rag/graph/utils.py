@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
+
 load_dotenv()
+
 
 def _format_docs(docs: list) -> str:
     parts = []

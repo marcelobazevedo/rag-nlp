@@ -50,10 +50,12 @@ def run_streaming_rag(
         "messages": [],
     }
     final_state = {}
+    retrieved_docs: List[Dict[str, Any]] = []
 
     for event in COMPILED_GRAPH.stream(initial_state, config=run_config):
         if "retrieve" in event:
             output = event["retrieve"]
+            retrieved_docs = output.get("docs", [])
             yield {
                 "type": "details",
                 "data": {
@@ -72,7 +74,7 @@ def run_streaming_rag(
         if END in event:
             final_state = event[END]
 
-    docs = final_state.get("docs", [])
+    docs = final_state.get("docs") or retrieved_docs
     sources = []
     for d in docs:
         md = d.get("metadata", {})
@@ -94,4 +96,9 @@ def run_streaming_rag(
                 "chunk_id": md.get("chunk_id", d.get("chunk_id")),
             }
         )
-    yield {"type": "sources", "data": sources}
+    yield {
+        "type": "sources",
+        "data": {
+            "sources": sources,
+        },
+    }
